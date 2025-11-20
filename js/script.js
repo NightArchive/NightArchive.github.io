@@ -38,7 +38,7 @@ function searchTools(query) {
     });
     const toolsGrid = document.querySelector('.tools-grid');
     let noResults = document.querySelector('.no-results-message');
-    
+
     if (visibleCount === 0 && searchQuery !== '') {
         if (!noResults) {
             noResults = document.createElement('div');
@@ -51,7 +51,7 @@ function searchTools(query) {
     }
 }
 document.querySelectorAll('.toc a').forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
@@ -87,59 +87,17 @@ function setupLazyLoading() {
         });
     }
 }
-document.addEventListener('DOMContentLoaded', function() {
-     setupLazyLoading();
-     setupSearch();
-     setupAnchorLinks();
-     trackScroll();
-     setupMobileMenu();
+document.addEventListener('DOMContentLoaded', function () {
+    setupLazyLoading();
+    setupSearch();
+    setupAnchorLinks();
+    trackScroll();
 });
-
-function setupMobileMenu() {
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('navMenu');
-    
-    if (!hamburger || !navMenu) return;
-    
-    hamburger.addEventListener('click', function(e) {
-        e.stopPropagation();
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-    
-    // Закрыть меню при клике на ссылку
-    const navLinks = navMenu.querySelectorAll('a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
-    });
-    
-    // Закрыть меню при клике вне меню
-    document.addEventListener('click', function(event) {
-        const isClickInsideMenu = navMenu.contains(event.target);
-        const isClickOnHamburger = hamburger.contains(event.target);
-        
-        if (!isClickInsideMenu && !isClickOnHamburger && navMenu.classList.contains('active')) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        }
-    });
-    
-    // Закрыть меню при скролле
-    window.addEventListener('scroll', function() {
-        if (navMenu.classList.contains('active')) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        }
-    }, { passive: true });
-}
 function setupSearch() {
     const searchInput = document.querySelector('.search-input');
     if (!searchInput) return;
 
-    searchInput.addEventListener('input', function(e) {
+    searchInput.addEventListener('input', function (e) {
         const searchTerm = e.target.value.toLowerCase();
         const sections = document.querySelectorAll('section');
 
@@ -155,7 +113,7 @@ function setupSearch() {
 }
 function setupAnchorLinks() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
@@ -220,7 +178,7 @@ function scrollToTop() {
         behavior: 'smooth'
     });
 }
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const scrollTopBtn = document.querySelector('.scroll-to-top');
     if (scrollTopBtn) {
         if (window.scrollY > 300) {
@@ -232,7 +190,7 @@ window.addEventListener('scroll', function() {
 });
 let hasUnsavedChanges = false;
 
-window.addEventListener('beforeunload', function(e) {
+window.addEventListener('beforeunload', function (e) {
     if (hasUnsavedChanges) {
         e.preventDefault();
         e.returnValue = '';
@@ -266,15 +224,16 @@ function generateTableOfContents() {
     toc.innerHTML = '';
     toc.appendChild(list);
 }
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     console.log('NightArchive initialized');
     if (!navigator.clipboard) {
         console.warn('Clipboard API not available');
     }
     setupKeyboardShortcuts();
+    initAnimationsOnScroll();
 });
 function setupKeyboardShortcuts() {
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
             e.preventDefault();
             const searchInput = document.querySelector('.search-input');
@@ -292,7 +251,7 @@ function setupKeyboardShortcuts() {
 function trackEvent(eventName, eventData) {
     console.log(`Event: ${eventName}`, eventData);
 }
-window.addEventListener('error', function(event) {
+window.addEventListener('error', function (event) {
     console.error('Error:', event.error);
 });
 
@@ -320,7 +279,7 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
-const debouncedScroll = debounce(function() {
+const debouncedScroll = debounce(function () {
     trackScroll();
 }, 250);
 function validateEmail(email) {
@@ -340,25 +299,8 @@ function closeGithubBanner() {
     const banner = document.getElementById('githubBanner');
     if (banner) {
         banner.classList.add('hidden');
-        // Сохраняем дату закрытия (баннер вернётся завтра)
-        const today = new Date().toDateString();
-        localStorage.setItem('githubBannerClosedDate', today);
     }
 }
-
-// Проверяем если ли закрытый баннер при загрузке (показываем один раз в день)
-document.addEventListener('DOMContentLoaded', function() {
-    const today = new Date().toDateString();
-    const closedDate = localStorage.getItem('githubBannerClosedDate');
-    
-    // Если баннер был закрыт сегодня, скрываем его
-    if (closedDate === today) {
-        const banner = document.getElementById('githubBanner');
-        if (banner) {
-            banner.classList.add('hidden');
-        }
-    }
-});
 function prefetchResources() {
     const links = document.querySelectorAll('a[href*=".html"]');
     links.forEach(link => {
@@ -384,19 +326,17 @@ function trackToolSearch(query) {
 function trackPageView(page) {
     enhancedTrack('pageView', { page, timestamp: new Date() });
 }
-// Initialize tools page
-document.addEventListener('DOMContentLoaded', function() {
-    // Make sure filter and search functions work
+document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
-        searchInput.addEventListener('input', function(e) {
+        searchInput.addEventListener('input', function (e) {
             searchTools(e.target.value);
         });
     }
 
     const filterButtons = document.querySelectorAll('.filter-btn');
     filterButtons.forEach(btn => {
-        btn.addEventListener('click', function(e) {
+        btn.addEventListener('click', function (e) {
             e.preventDefault();
             const category = this.getAttribute('data-category');
             filterTools(category);
@@ -404,17 +344,52 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+function initAnimationsOnScroll() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fade-in-up');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    const animatableSelectors = [
+        '.tool-card',
+        '.resource-card',
+        '.documentation-section',
+        '.comparison-table',
+        '.ethics-principles > div',
+        '.contact-card'
+    ];
+
+    animatableSelectors.forEach(selector => {
+        document.querySelectorAll(selector).forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.classList.add(`animate-delay-${(index % 6) + 1}`);
+            observer.observe(el);
+        });
+    });
+}
+
 window.NightArchive = {
-     filterTools,
-     searchTools,
-     toggleDarkMode,
-     printPage,
-     shareArticle,
-     scrollToTop,
-     validateEmail,
-     validateUrl,
-     closeGithubBanner,
-     trackToolSearch,
-     trackPageView,
-     enhancedTrack
- };
+    filterTools,
+    searchTools,
+    toggleDarkMode,
+    printPage,
+    shareArticle,
+    scrollToTop,
+    validateEmail,
+    validateUrl,
+    closeGithubBanner,
+    trackToolSearch,
+    trackPageView,
+    enhancedTrack,
+    initAnimationsOnScroll
+};
+
