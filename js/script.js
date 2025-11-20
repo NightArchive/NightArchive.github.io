@@ -392,4 +392,3 @@ window.NightArchive = {
     enhancedTrack,
     initAnimationsOnScroll
 };
-
