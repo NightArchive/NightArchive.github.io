@@ -19,7 +19,7 @@
             <div class="nav-logo">
                 <a href="index.html">NightArchive</a>
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="osint.html">OSINT</a></li>
                 <li><a href="deanon.html">Деанон</a></li>
@@ -28,10 +28,17 @@
                 <li><a href="docs.html">Документация</a></li>
                 <li><a href="about.html">О сайте</a></li>
             </ul>
-            <a href="https://t.me/NightArchiveTg" target="_blank" class="nav-telegram-btn">
-                <i class="fab fa-telegram-plane"></i>
-                <span>Telegram</span>
-            </a>
+            <div class="nav-right">
+                <a href="https://t.me/NightArchiveTg" target="_blank" class="nav-telegram-btn">
+                    <i class="fab fa-telegram-plane"></i>
+                    <span>Telegram</span>
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
     <section class="page-header">

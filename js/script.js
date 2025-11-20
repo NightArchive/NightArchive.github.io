@@ -92,7 +92,49 @@ document.addEventListener('DOMContentLoaded', function() {
      setupSearch();
      setupAnchorLinks();
      trackScroll();
+     setupMobileMenu();
 });
+
+function setupMobileMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    
+    if (!hamburger || !navMenu) return;
+    
+    hamburger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+    
+    // Закрыть меню при клике на ссылку
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+    
+    // Закрыть меню при клике вне меню
+    document.addEventListener('click', function(event) {
+        const isClickInsideMenu = navMenu.contains(event.target);
+        const isClickOnHamburger = hamburger.contains(event.target);
+        
+        if (!isClickInsideMenu && !isClickOnHamburger && navMenu.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+    
+    // Закрыть меню при скролле
+    window.addEventListener('scroll', function() {
+        if (navMenu.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    }, { passive: true });
+}
 function setupSearch() {
     const searchInput = document.querySelector('.search-input');
     if (!searchInput) return;
@@ -298,8 +340,25 @@ function closeGithubBanner() {
     const banner = document.getElementById('githubBanner');
     if (banner) {
         banner.classList.add('hidden');
+        // Сохраняем дату закрытия (баннер вернётся завтра)
+        const today = new Date().toDateString();
+        localStorage.setItem('githubBannerClosedDate', today);
     }
 }
+
+// Проверяем если ли закрытый баннер при загрузке (показываем один раз в день)
+document.addEventListener('DOMContentLoaded', function() {
+    const today = new Date().toDateString();
+    const closedDate = localStorage.getItem('githubBannerClosedDate');
+    
+    // Если баннер был закрыт сегодня, скрываем его
+    if (closedDate === today) {
+        const banner = document.getElementById('githubBanner');
+        if (banner) {
+            banner.classList.add('hidden');
+        }
+    }
+});
 function prefetchResources() {
     const links = document.querySelectorAll('a[href*=".html"]');
     links.forEach(link => {
