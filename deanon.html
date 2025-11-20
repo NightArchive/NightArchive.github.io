@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Деанон - NightArchive</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">NightArchive</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="osint.html">OSINT</a></li>
+                <li><a href="deanon.html" class="active">Деанон</a></li>
+                <li><a href="tools.html">Инструменты</a></li>
+                <li><a href="resources.html">Ресурсы</a></li>
+                <li><a href="docs.html">Документация</a></li>
+                <li><a href="about.html">О сайте</a></li>
+            </ul>
+            <a href="https://t.me/NightArchiveTg" target="_blank" class="nav-telegram-btn">
+                <i class="fab fa-telegram-plane"></i>
+                <span>Telegram</span>
+            </a>
+        </div>
+    </nav>
+    <section class="page-header">
+        <h1>Деанонимизация - Методология и Защита</h1>
+        <p>Понимание техник деанонимизации и защиты своей приватности</p>
+    </section>
+
+    <main class="container has-sidebar">
+        <aside class="sidebar">
+            <h3>Содержание</h3>
+            <ul class="toc">
+                <li><a href="#intro">Введение</a></li>
+                <li><a href="#digital-footprint">Цифровой след</a></li>
+                <li><a href="#techniques">Техники деанона</a></li>
+                <li><a href="#metadata">Анализ метаданных</a></li>
+                <li><a href="#behavioral">Поведенческие паттерны</a></li>
+                <li><a href="#network">Сетевой анализ</a></li>
+                <li><a href="#protection">Защита от деанона</a></li>
+                <li><a href="#vpn-tor">VPN и Tor</a></li>
+                <li><a href="#legal">Правовые аспекты</a></li>
+            </ul>
+        </aside>
+
+        <article class="main-content">
+            <section id="intro" class="section">
+                <h2>Введение в деанонимизацию</h2>
+                <p><strong>Деанонимизация</strong> - это процесс раскрытия подлинной личности человека, скрывающегося за анонимностью в интернете.</p>
+
+                <div class="info-box">
+                    <h3><i class="fas fa-triangle-exclamation"></i> Важное замечание о легальности</h3>
+                    <p>Деанонимизация может быть незаконной в зависимости от метода и страны. Эта информация предоставляется исключительно в образовательных целях. Любые действия должны соответствовать местному законодательству.</p>
+                </div>
+
+                <h3>Категории методов:</h3>
+                <ul>
+                    <li><strong>Технические методы:</strong> Анализ IP, DNS, трафика</li>
+                    <li><strong>Социальные методы:</strong> Анализ постов, паттернов поведения</li>
+                    <li><strong>Гибридные методы:</strong> Комбинация технических и социальных подходов</li>
+                    <li><strong>Судебные методы:</strong> Судебные постановления и субпены</li>
+                </ul>
+            </section>
+            <section id="digital-footprint" class="section">
+                <h2>Цифровой след</h2>
+
+                <h3>Что такое цифровой след?</h3>
+                <p>Это совокупность всех данных и информации, которые оставляет человек в интернете, даже если пытается оставаться анонимным.</p>
+
+                <h3>Компоненты цифрового следа:</h3>
+
+                <div class="component">
+                    <h4>1. Активные данные</h4>
+                    <ul>
+                        <li>Размещенные сообщения, комментарии</li>
+                        <li>Загруженные изображения</li>
+                        <li>Профильная информация</li>
+                        <li>История поиска</li>
+                        <li>Включенное местоположение</li>
+                    </ul>
+                </div>
+
+                <div class="component">
+                    <h4>2. Пассивные данные</h4>
+                    <ul>
+                        <li>IP адреса</li>
+                        <li>User-Agent и браузерные отпечатки</li>
+                        <li>Cookies и сессионные данные</li>
+                        <li>Метаданные файлов</li>
+                        <li>История подключений</li>
+                    </ul>
+                </div>
+
+                <div class="component">
+                    <h4>3. Производные данные</h4>
+                    <ul>
+                        <li>Данные, собранные компаниями</li>
+                        <li>Аналитика использования</li>
+                        <li>Рекламные профили</li>
+                        <li>Предполагаемые интересы</li>
+                    </ul>
+                </div>
+
+                <h3>Утечки данных и слитые базы</h3>
+                <p><strong>Утечка данных</strong> - это неконтролируемое разглашение личной информации в результате взлома, ошибки безопасности или небрежности.</p>
+
+                <h4>Типы утечек:</h4>
+                <ul>
+                    <li><strong>Email утечки:</strong> Базы с адресами электронной почты и паролями</li>
+                    <li><strong>Телефонные базы:</strong> Номера телефонов связанные с аккаунтами</li>
+                    <li><strong>Личные данные:</strong> ФИО, адреса, даты рождения, паспортные данные</li>
+                    <li><strong>Финансовые данные:</strong> Номера кредитных карт, банковские реквизиты</li>
+                    <li><strong>Социальные сети:</strong> Публичные профили, личные сообщения, фото</li>
+                    <li><strong>Документы:</strong> Скриншоты, PDF, документы с личной информацией</li>
+                </ul>
+
+                <h4>Известные крупные утечки:</h4>
+                <ul>
+                    <li><strong>BreachCompilation (2017):</strong> 252 различные утечки в одну базу, 41 Гб, 1.4+ млрд учетных данных</li>
+                    <li><strong>Facebook (2021):</strong> Более 530 млн пользователей</li>
+                    <li><strong>LinkedIn (2021):</strong> Более 700 млн профилей</li>
+                    <li><strong>Yahoo (2013-2014):</strong> Более 3 млрд аккаунтов</li>
+                    <li><strong>Equifax (2017):</strong> Личные данные 147 млн человек</li>
+                </ul>
+
+                <h4>Как утечки используются для деанонимизации:</h4>
+                <ol>
+                    <li><strong>Поиск email:</strong> Найти email в утечках через сервисы типа Have I Been Pwned</li>
+                    <li><strong>Восстановление пароля:</strong> Получить пароль если он был в утечке</li>
+                    <li><strong>Связь аккаунтов:</strong> Найти другие аккаунты по одному email</li>
+                    <li><strong>Личная информация:</strong> Получить ФИ О, адрес, телефон из баз</li>
+                    <li><strong>Кросс-референс:</strong> Связать информацию из разных утечек для полной картины</li>
+                    <li><strong>Дальнейший поиск:</strong> Использовать найденные данные для поиска в соцсетях и базах</li>
+                </ol>
+
+                <h4>Защита от утечек:</h4>
+                <ul>
+                    <li>Используйте уникальные пароли для каждого сервиса</li>
+                    <li>Включайте двухфакторную аутентификацию</li>
+                    <li>Используйте менеджеры паролей</li>
+                    <li>Проверяйте аккаунты на сервисе Have I Been Pwned</li>
+                    <li>Минимизируйте размещение личной информации онлайн</li>
+                    <li>Используйте маскирующие сервисы (alias email, виртуальные номера)</li>
+                    <li>Регулярно меняйте пароли важных аккаунтов</li>
+                    <li>Мониторьте свои данные через сервисы оповещения об утечках</li>
+                </ul>
+            </section>
+            <section id="techniques" class="section">
+                <h2>Техники деанонимизации</h2>
+
+                <div class="technique-section">
+                    <h3>1. IP Tracing</h3>
+                    <p>Определение реального IP адреса пользователя, даже если он использует VPN или прокси.</p>
+                    <h4>Методы:</h4>
+                    <ul>
+                        <li><strong>WebRTC leak:</strong> Утечка IP через WebRTC даже с VPN</li>
+                        <li><strong>DNS leak:</strong> Раскрытие IP через DNS запросы</li>
+                        <li><strong>Яркий контент:</strong> Размещение контента, требующего прямого подключения</li>
+                        <li><strong>Логи сервера:</strong> Просмотр логов веб-сервера</li>
+                    </ul>
+                    <h4>Защита:</h4>
+                    <ul>
+                        <li>VPN с надежной политикой non-logging</li>
+                        <li>Tor Browser</li>
+                        <li>Проверка WebRTC утечек</li>
+                        <li>DNS filtering</li>
+                    </ul>
+                </div>
+
+                <div class="technique-section">
+                    <h3>2. Browser Fingerprinting</h3>
+                    <p>Создание уникального идентификатора браузера на основе его конфигурации.</p>
+                    <h4>Собираемые данные:</h4>
+                    <ul>
+                        <li>User-Agent строка</li>
+                        <li>Установленные расширения</li>
+                        <li>Разрешение экрана</li>
+                        <li>Шрифты системы</li>
+                        <li>Язык и часовой пояс</li>
+                        <li>WebGL данные видеокарты</li>
+                    </ul>
+                    <h4>Защита:</h4>
+                    <ul>
+                        <li>Tor Browser (специально защищен от fingerprinting)</li>
+                        <li>uBlock Origin + скрипты</li>
+                        <li>Randomization расширения</li>
+                        <li>Использование стандартного браузера</li>
+                    </ul>
+                </div>
+
+                <div class="technique-section">
+                    <h3>3. Лингвистический анализ</h3>
+                    <p>Определение личности по стилю письма, ошибкам, фразеологии.</p>
+                    <h4>Анализируемые элементы:</h4>
+                    <ul>
+                        <li>Частота использования слов</li>
+                        <li>Характерные фразы</li>
+                        <li>Пунктуация</li>
+                        <li>Граммтические ошибки</li>
+                        <li>Темп публикаций</li>
+                        <li>Часовой пояс постов</li>
+                    </ul>
+                    <h4>Защита:</h4>
+                    <ul>
+                        <li>Изменение стиля письма</li>
+                        <li>Различные аккаунты для разных ролей</li>
+                        <li>Нерегулярное время постов</li>
+                        <li>Использование инструментов переписи текста</li>
+                    </ul>
+                </div>
+
+                <div class="technique-section">
+                    <h3>4. Социальная инженерия</h3>
+                    <p>Получение информации через манипуляцию и доверие.</p>
+                    <h4>Методы:</h4>
+                    <ul>
+                        <li>Фишинг</li>
+                        <li>Претекстинг (создание предлога)</li>
+                        <li>Baiting (приманка)</li>
+                        <li>Quid pro quo (взаимность)</li>
+                        <li>Tail gating (следование за человеком)</li>
+                    </ul>
+                    <h4>Защита:</h4>
+                    <ul>
+                        <li>Скептицизм к неожиданным сообщениям</li>
+                        <li>Проверка источников</li>
+                        <li>Двухфакторная аутентификация</li>
+                        <li>Образование и осведомленность</li>
+                    </ul>
+                </div>
+            </section>
+            <section id="metadata" class="section">
+                <h2>Анализ метаданных для деанонимизации</h2>
+
+                <h3>EXIF данные с фотографий</h3>
+                <p>Фотографии могут содержать GPS координаты, дату и время, модель устройства.</p>
+                <code>
+Image: photo.jpg<br>
+GPS: 40.7128°N, 74.0060°W (New York City)<br>
+Date: 2024-11-20 14:30:45<br>
+Device: iPhone 15 Pro<br>
+                </code>
+
+                <h3>PDF и документы</h3>
+                <p>Внутренние метаданные могут раскрыть информацию об авторе, времени создания и редактирования.</p>
+                <ul>
+                    <li>Автор документа</li>
+                    <li>Программное обеспечение, использованное для создания</li>
+                    <li>Время создания и изменения</li>
+                    <li>Имена скрытых авторов в истории версий</li>
+                </ul>
+
+                <h3>Видео файлы</h3>
+                <ul>
+                    <li>Timestamp записи</li>
+                    <li>GPS координаты (если записано на смартфоне)</li>
+                    <li>Характеристики видеокамеры</li>
+                    <li>Фоновые звуки и шум</li>
+                </ul>
+            </section>
+            <section id="behavioral" class="section">
+                <h2>Поведенческие паттерны</h2>
+
+                <h3>Анализ активности</h3>
+                <ul>
+                    <li><strong>Часы активности:</strong> Когда человек обычно в сети</li>
+                    <li><strong>Дни активности:</strong> Выходной или рабочие дни</li>
+                    <li><strong>Часовой пояс:</strong> Определение по времени постов</li>
+                    <li><strong>Тип контента:</strong> Предпочтения в информации</li>
+                    <li><strong>Язык:</strong> Родной язык и акцент</li>
+                </ul>
+
+                <h3>Социальные связи</h3>
+                <ul>
+                    <li>Анализ связей между аккаунтами</li>
+                    <li>Совместные контакты</li>
+                    <li>Сообщества и сообщества членства</li>
+                    <li>Взаимодействия с другими пользователями</li>
+                </ul>
+
+                <h3>Интересы и знания</h3>
+                <ul>
+                    <li>Специализированные знания</li>
+                    <li>Профессиональные навыки</li>
+                    <li>Хобби и интересы</li>
+                    <li>Образованность и уровень IQ</li>
+                </ul>
+            </section>
+            <section id="network" class="section">
+                <h2>Сетевой анализ</h2>
+
+                <h3>Анализ трафика</h3>
+                <p>Изучение закономерностей сетевого трафика для идентификации пользователя.</p>
+                <ul>
+                    <li>Размеры пакетов</li>
+                    <li>Интервалы между пакетами</li>
+                    <li>Объем трафика</li>
+                    <li>Частота подключений</li>
+                </ul>
+
+                <h3>DNS анализ</h3>
+                <ul>
+                    <li>Какие сайты посещает</li>
+                    <li>Частота посещений</li>
+                    <li>Сервисы, которые использует</li>
+                </ul>
+
+                <h3>Network timing attack</h3>
+                <p>Определение личности по времени ответов в Tor сети.</p>
+            </section>
+            <section id="protection" class="section">
+                <h2>Защита от деанонимизации</h2>
+
+                <h3>Технические меры:</h3>
+                <div class="protection-measures">
+                    <div class="measure">
+                        <h4>1. VPN (Virtual Private Network)</h4>
+                        <p><strong>Что делает:</strong> Маскирует ваш IP адрес</p>
+                        <p><strong>Ограничения:</strong> VPN провайдер может видеть ваш трафик</p>
+                        <p><strong>Рекомендации:</strong>
+                        <ul>
+                            <li>Выбирайте VPN с политикой non-logging</li>
+                            <li>Используйте OpenVPN или WireGuard протоколы</li>
+                            <li>Проверяйте на утечки IP и DNS</li>
+                        </ul>
+                        </p>
+                    </div>
+
+                    <div class="measure">
+                        <h4>2. Tor Browser</h4>
+                        <p><strong>Что делает:</strong> Маршрутизирует трафик через несколько узлов</p>
+                        <p><strong>Преимущества:</strong> Очень высокий уровень анонимности</p>
+                        <p><strong>Рекомендации:</strong>
+                        <ul>
+                            <li>Используйте последнюю версию</li>
+                            <li>Не изменяйте настройки браузера</li>
+                            <li>Не открывайте его в окне в полный размер (fingerprinting)</li>
+                        </ul>
+                        </p>
+                    </div>
+
+                    <div class="measure">
+                        <h4>3. Удаление метаданных</h4>
+                        <p><strong>Для фотографий:</strong> ExifTool, Verexif</p>
+                        <p><strong>Для документов:</strong> LibreOffice, PDF-XChange</p>
+                        <p><strong>Для видео:</strong> FFmpeg</p>
+                    </div>
+
+                    <div class="measure">
+                        <h4>4. Зашифрованные сообщения</h4>
+                        <ul>
+                            <li>Signal - приватные сообщения</li>
+                            <li>Briar - мессенджер через Tor</li>
+                            <li>ProtonMail - зашифрованная почта</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Операционные меры:</h3>
+                <ul>
+                    <li>Использование разных никнеймов для разных целей</li>
+                    <li>Не связывайте разные аккаунты</li>
+                    <li>Изменяйте стиль письма</li>
+                    <li>Избегайте личной информации</li>
+                    <li>Не используйте одни и те же пароли</li>
+                    <li>Периодически удаляйте историю</li>
+                    <li>Используйте отдельные устройства для разных целей</li>
+                </ul>
+
+                <h3>Операционная безопасность (OPSEC):</h3>
+                <ol>
+                    <li>Предположите худшее</li>
+                    <li>Минимизируйте информацию</li>
+                    <li>Используйте многоуровневую защиту</li>
+                    <li>Проверяйте каждый шаг</li>
+                    <li>Будьте параноидально осторожны</li>
+                </ol>
+            </section>
+            <section id="vpn-tor" class="section">
+                <h2>VPN vs Tor - Сравнение</h2>
+
+                <table class="comparison-table">
+                    <tr>
+                        <th>Характеристика</th>
+                        <th>VPN</th>
+                        <th>Tor</th>
+                    </tr>
+                    <tr>
+                        <td>Скорость</td>
+                        <td>Высокая</td>
+                        <td>Низкая</td>
+                    </tr>
+                    <tr>
+                        <td>Анонимность</td>
+                        <td>Средняя</td>
+                        <td>Очень высокая</td>
+                    </tr>
+                    <tr>
+                        <td>Надежность провайдера</td>
+                        <td>Зависит от VPN</td>
+                        <td>Распределенная сеть</td>
+                    </tr>
+                    <tr>
+                        <td>Использование на Tor</td>
+                        <td>VPN → Tor</td>
+                        <td>Tor → VPN</td>
+                    </tr>
+                    <tr>
+                        <td>Простота использования</td>
+                        <td>Простой</td>
+                        <td>Сложный</td>
+                    </tr>
+                    <tr>
+                        <td>Стоимость</td>
+                        <td>Платный</td>
+                        <td>Бесплатный</td>
+                    </tr>
+                </table>
+
+                <h3>Рекомендации:</h3>
+                <ul>
+                    <li>Для обычного использования: VPN</li>
+                    <li>Для высокой секретности: Tor Browser</li>
+                    <li>Для максимальной защиты: VPN + Tor (Onion over VPN)</li>
+                </ul>
+            </section>
+            <section id="legal" class="section">
+                <h2>Правовые аспекты</h2>
+
+                <div class="warning-box">
+                    <h3><i class="fas fa-triangle-exclamation"></i> Юридическое предупреждение</h3>
+                    <p>Законность деанонимизации сильно варьируется в зависимости от:</p>
+                    <ul>
+                        <li>Страны и юрисдикции</li>
+                        <li>Используемых методов</li>
+                        <li>Целей деанонимизации</li>
+                        <li>Согласия целевого лица</li>
+                    </ul>
+                </div>
+
+                <h3>Что может быть незаконным:</h3>
+                <ul>
+                    <li>Несанкционированный доступ к компьютерам (CFAA в США)</li>
+                    <li>Нарушение приватности</li>
+                    <li>Дискриминация на основе полученной информации</li>
+                    <li>Публикация приватной информации (doxing)</li>
+                    <li>Киберпреследование (cyberstalking)</li>
+                    <li>Мошенничество</li>
+                </ul>
+
+                <h3>Когда деанонимизация может быть законной:</h3>
+                <ul>
+                    <li>По решению суда (subpoena)</li>
+                    <li>Правоохранительные органы</li>
+                    <li>Исследование с согласия</li>
+                    <li>Собственная информация</li>
+                </ul>
+            </section>
+
+
+        </article>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 NightArchive. Все права защищены.</p>
+            <p>Используйте эту информацию ответственно и в соответствии с законодательством.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('code').forEach(function(codeBlock) {
+                if (!codeBlock.closest('h1, h2, h3, h4, h5, h6, p, a')) {
+                    hljs.highlightElement(codeBlock);
+                    if (codeBlock.textContent.trim()) {
+                        const wrapper = document.createElement('div');
+                        wrapper.className = 'code-block-wrapper';
+                        codeBlock.parentNode.insertBefore(wrapper, codeBlock);
+                        wrapper.appendChild(codeBlock);
+                        const copyBtn = document.createElement('button');
+                        copyBtn.className = 'code-copy-btn';
+                        copyBtn.innerHTML = '<i class="fas fa-copy"></i> Копировать';
+                        copyBtn.addEventListener('click', function() {
+                            const text = codeBlock.innerText;
+                            navigator.clipboard.writeText(text).then(function() {
+                                copyBtn.innerHTML = '<i class="fas fa-check"></i> Скопировано!';
+                                copyBtn.classList.add('copied');
+                                setTimeout(function() {
+                                    copyBtn.innerHTML = '<i class="fas fa-copy"></i> Копировать';
+                                    copyBtn.classList.remove('copied');
+                                }, 2000);
+                            }).catch(function() {
+                                const textarea = document.createElement('textarea');
+                                textarea.value = text;
+                                document.body.appendChild(textarea);
+                                textarea.select();
+                                document.execCommand('copy');
+                                document.body.removeChild(textarea);
+                                copyBtn.innerHTML = '<i class="fas fa-check"></i> Скопировано!';
+                                copyBtn.classList.add('copied');
+                                setTimeout(function() {
+                                    copyBtn.innerHTML = '<i class="fas fa-copy"></i> Копировать';
+                                    copyBtn.classList.remove('copied');
+                                }, 2000);
+                            });
+                        });
+                        wrapper.appendChild(copyBtn);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

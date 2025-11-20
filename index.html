@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NightArchive - профессиональная база знаний по OSINT, цифровому расследованию и кибербезопасности. 50+ инструментов, подробные гайды и документация.">
+    <meta name="keywords" content="OSINT, деанонимизация, кибербезопасность, инструменты разведки, цифровое расследование">
+    <meta name="author" content="NightArchive">
+    <meta name="theme-color" content="#0a0e27">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="NightArchive - Профессиональная База OSINT">
+    <meta property="og:description" content="Полный справочник по OSINT, деанонимизации и кибербезопасности с 50+ инструментами">
+    <meta property="og:url" content="https://nightarchive.com">
+    <meta property="og:image" content="/images/og-image.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NightArchive - Профессиональная База OSINT">
+    <meta name="twitter:description" content="Полный справочник по OSINT и кибербезопасности">
+    
+    <title>NightArchive - Профессиональная база знаний по OSINT и кибербезопасности</title>
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "NightArchive",
+        "description": "Профессиональная база знаний по OSINT и кибербезопасности",
+        "url": "https://nightarchive.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "{search_term_string}"
+        }
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">NightArchive</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="osint.html">OSINT</a></li>
+                <li><a href="deanon.html">Деанон</a></li>
+                <li><a href="tools.html">Инструменты</a></li>
+                <li><a href="resources.html">Ресурсы</a></li>
+                <li><a href="docs.html">Документация</a></li>
+                <li><a href="about.html">О сайте</a></li>
+            </ul>
+            <a href="https://t.me/NightArchiveTg" target="_blank" class="nav-telegram-btn">
+                <i class="fab fa-telegram-plane"></i>
+                <span>Telegram</span>
+            </a>
+        </div>
+    </nav>
+    <div id="githubBanner" class="github-banner">
+        <div class="github-banner-content">
+            <div class="banner-text">
+                <i class="fab fa-github"></i>
+                <span>Проект открыт на GitHub — поддержите разработку звёздочкой!</span>
+            </div>
+            <a href="https://github.com" target="_blank" class="github-btn">
+                <i class="fas fa-star"></i>
+                <span>Дать звезду</span>
+            </a>
+            <button class="banner-close" onclick="NightArchive.closeGithubBanner()" title="Закрыть">✕</button>
+        </div>
+    </div>
+     <section class="hero">
+        <div class="hero-content">
+            <h1>NightArchive</h1>
+            <p class="hero-subtitle">Образовательная база знаний по OSINT, цифровому расследованию и кибербезопасности</p>
+            
+            <div class="hero-features">
+                <div class="hero-feature-item">
+                    <i class="fas fa-book-open"></i>
+                    <span>Подробные гайды</span>
+                </div>
+                <div class="hero-feature-item">
+                    <i class="fas fa-tools"></i>
+                    <span>50+ инструментов</span>
+                </div>
+                <div class="hero-feature-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Образование</span>
+                </div>
+                <div class="hero-feature-item">
+                    <i class="fas fa-shield"></i>
+                    <span>Безопасность</span>
+                </div>
+            </div>
+            
+            <div class="hero-buttons">
+                <a href="osint.html" class="btn btn-primary">OSINT Руководства</a>
+                <a href="tools.html" class="btn btn-secondary">Каталог инструментов</a>
+            </div>
+        </div>
+    </section>
+    <main class="container">
+        <section class="quick-start">
+            <h2>Быстрый старт</h2>
+            <div class="quick-start-grid">
+                <div class="quick-start-item">
+                    <div class="step-number">1</div>
+                    <h3>Основы OSINT</h3>
+                    <p>Начните с понимания основных принципов открытого исследования информации</p>
+                    <ul>
+                        <li>Что такое OSINT</li>
+                        <li>Основные источники</li>
+                        <li>Базовые техники</li>
+                    </ul>
+                </div>
+
+                <div class="quick-start-item">
+                    <div class="step-number">2</div>
+                    <h3>Инструменты</h3>
+                    <p>Изучите необходимые инструменты для эффективной работы</p>
+                    <ul>
+                        <li>Поисковые движки</li>
+                        <li>Анализ социальных сетей</li>
+                        <li>Геолокация</li>
+                    </ul>
+                </div>
+
+                <div class="quick-start-item">
+                    <div class="step-number">3</div>
+                    <h3>Практика</h3>
+                    <p>Применяйте полученные знания на практике</p>
+                    <ul>
+                        <li>Упражнения</li>
+                        <li>Сценарии</li>
+                        <li>Case Studies</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="features">
+            <h2>Что вы найдете здесь</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-magnifying-glass"></i></div>
+                    <h3>OSINT Руководства</h3>
+                    <p>Полные пошаговые руководства по открытым источникам информации, техникам поиска и анализу данных</p>
+                    <a href="osint.html" class="feature-link">Подробнее →</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-mask"></i></div>
+                    <h3>Деанон Методология</h3>
+                    <p>Изучите методы и техники деанонимизации, защиты от них и этические аспекты</p>
+                    <a href="deanon.html" class="feature-link">Подробнее →</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-wrench"></i></div>
+                    <h3>Инструменты & ПО</h3>
+                    <p>Каталог лучших инструментов для OSINT, анализа данных и безопасности</p>
+                    <a href="tools.html" class="feature-link">Подробнее →</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-book"></i></div>
+                    <h3>Документация</h3>
+                    <p>Подробная техническая документация, API и примеры кода</p>
+                    <a href="docs.html" class="feature-link">Подробнее →</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-globe"></i></div>
+                    <h3>Ресурсы</h3>
+                    <p>Ссылки на полезные источники, курсы, статьи и исследования</p>
+                    <a href="resources.html" class="feature-link">Подробнее →</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-scale-balanced"></i></div>
+                    <h3>Этика & Право</h3>
+                    <p>Информация о правовых и этических аспектах исследований</p>
+                    <a href="about.html" class="feature-link">Подробнее →</a>
+                </div>
+            </div>
+        </section>
+        <section class="stats">
+            <div class="stat-item">
+                <h3>50+</h3>
+                <p>Инструментов</p>
+            </div>
+            <div class="stat-item">
+                <h3>40+</h3>
+                <p>Ресурсов</p>
+            </div>
+            <div class="stat-item">
+                <h3>20+</h3>
+                <p>Полных гайдов</p>
+            </div>
+            <div class="stat-item">
+                <h3>15+</h3>
+                <p>Категорий</p>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 NightArchive. Все права защищены.</p>
+            <p>Этот ресурс создан в образовательных целях. Используйте информацию ответственно и в соответствии с законодательством вашей страны.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('js/service-worker.js').catch(err => {
+                console.log('Service Worker registration failed:', err);
+            });
+        }
+    </script>
+</body>
+</html>

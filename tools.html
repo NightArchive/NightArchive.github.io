@@ -1,0 +1,2208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Каталог 50+ профессиональных инструментов для OSINT и кибербезопасности. Поиск, фильтрация и подробное описание каждого инструмента.">
+    <meta name="keywords" content="OSINT инструменты, кибербезопасность, поиск, геолокация, анализ социальных сетей">
+    <meta name="theme-color" content="#051829">
+    <title>Инструменты для OSINT - Каталог 50+ утилит | NightArchive</title>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">NightArchive</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="osint.html">OSINT</a></li>
+                <li><a href="deanon.html">Деанон</a></li>
+                <li><a href="tools.html" class="active">Инструменты</a></li>
+                <li><a href="resources.html">Ресурсы</a></li>
+                <li><a href="docs.html">Документация</a></li>
+                <li><a href="about.html">О сайте</a></li>
+            </ul>
+            <a href="https://t.me/NightArchiveTg" target="_blank" class="nav-telegram-btn">
+                <i class="fab fa-telegram-plane"></i>
+                <span>Telegram</span>
+            </a>
+        </div>
+    </nav>
+    <section class="page-header">
+        <h1>Инструменты и ПО для OSINT</h1>
+        <p>Каталог самых эффективных инструментов для сбора и анализа данных</p>
+    </section>
+
+    <div class="tools-filters-wrapper">
+        <div class="tools-search-box">
+            <input 
+                type="text" 
+                id="searchInput" 
+                class="tools-search-input" 
+                placeholder="Поиск инструментов (телефон, email, VK, никнейм...)"
+                oninput="searchTools(this.value)"
+            >
+        </div>
+        <div class="tools-filters">
+            <button class="filter-btn active" data-category="all" onclick="filterTools('all')">Все</button>
+            <button class="filter-btn" data-category="osint" onclick="filterTools('osint')">OSINT</button>
+            <button class="filter-btn" data-category="search" onclick="filterTools('search')">Поиск</button>
+            <button class="filter-btn" data-category="social" onclick="filterTools('social')">Социальные сети</button>
+            <button class="filter-btn" data-category="geo" onclick="filterTools('geo')">Геолокация</button>
+            <button class="filter-btn" data-category="security" onclick="filterTools('security')">Безопасность</button>
+            <button class="filter-btn" data-category="image" onclick="filterTools('image')">Изображения</button>
+            <button class="filter-btn" data-category="telegram-bot" onclick="filterTools('telegram-bot')">Telegram Боты</button>
+        </div>
+    </div>
+
+    <main class="container">
+         <section class="submit-tool-section">
+             <div class="submit-tool-content">
+                 <h2>Хотите добавить свой инструмент?</h2>
+                 <p>Если вы знаете полезный инструмент для OSINT или деанонимизации, поделитесь им с нами!</p>
+                 <div class="submit-tool-contacts">
+                     <a href="mailto:NightArchiveHelp@gmail.com" class="contact-link">
+                         <i class="fas fa-envelope"></i>
+                         <span>Написать на почту</span>
+                     </a>
+                     <a href="https://t.me/NightArchiveTg" target="_blank" class="contact-link">
+                         <i class="fab fa-telegram-plane"></i>
+                         <span>Написать в Telegram</span>
+                     </a>
+                 </div>
+             </div>
+         </section>
+
+         <section class="tools-grid">
+            <div class="tool-card osint">
+                <div class="tool-header">
+                    <h3>Shodan</h3>
+                    <span class="tool-type">Поиск</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск подключенных к интернету устройств</p>
+                <p><strong>Описание:</strong> Поисковый движок для IoT устройств, серверов, веб-камер</p>
+                <p><strong>Сайт:</strong> <a href="https://www.shodan.io" target="_blank">shodan.io</a></p>
+                <p><strong>Цена:</strong> Бесплатно (с ограничениями) / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">devices</span>
+                    <span class="tag">networks</span>
+                </div>
+            </div>
+
+            <div class="tool-card osint">
+                <div class="tool-header">
+                    <h3>Censys</h3>
+                    <span class="tool-type">Поиск</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск сертификатов, доменов, хостов</p>
+                <p><strong>Описание:</strong> Собирает и индексирует открытую информацию об интернете</p>
+                <p><strong>Сайт:</strong> <a href="https://censys.io" target="_blank">censys.io</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">certificates</span>
+                    <span class="tag">domains</span>
+                </div>
+            </div>
+
+            <div class="tool-card osint">
+                <div class="tool-header">
+                    <h3>Theharvester</h3>
+                    <span class="tool-type">OSINT</span>
+                </div>
+                <p><strong>Назначение:</strong> Сбор информации из открытых источников</p>
+                <p><strong>Описание:</strong> Инструмент для поиска email, поддоменов, IP адресов</p>
+                <p><strong>Сайт:</strong> GitHub (certego/theHarvester)</p>
+                <p><strong>Цена:</strong> Бесплатно (Open Source)</p>
+                <div class="tool-tags">
+                    <span class="tag">emails</span>
+                    <span class="tag">subdomains</span>
+                </div>
+            </div>
+
+            <div class="tool-card social">
+                <div class="tool-header">
+                    <h3>Sherlock</h3>
+                    <span class="tool-type">Поиск по никнеймам</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск одного никнейма на всех сайтах</p>
+                <p><strong>Описание:</strong> Проверяет доступность никнейма на 350+ сайтах</p>
+                <p><strong>Сайт:</strong> GitHub (sherlock-project/sherlock)</p>
+                <p><strong>Цена:</strong> Бесплатно (Open Source)</p>
+                <div class="tool-tags">
+                    <span class="tag">username</span>
+                    <span class="tag">social</span>
+                </div>
+            </div>
+
+            <div class="tool-card social">
+                <div class="tool-header">
+                    <h3>Instatouch</h3>
+                    <span class="tool-type">Instagram анализ</span>
+                </div>
+                <p><strong>Назначение:</strong> Анализ Instagram профилей</p>
+                <p><strong>Описание:</strong> Информация о профилях, подписчиках, медиа</p>
+                <p><strong>Сайт:</strong> <a href="https://github.com/sc1341/InstaTool" target="_blank">GitHub</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">instagram</span>
+                    <span class="tag">profiles</span>
+                </div>
+            </div>
+
+            <div class="tool-card social">
+                <div class="tool-header">
+                    <h3>Social Bearing</h3>
+                    <span class="tool-type">Twitter анализ</span>
+                </div>
+                <p><strong>Назначение:</strong> Анализ Twitter профилей</p>
+                <p><strong>Описание:</strong> Статистика, timeline, анализ активности</p>
+                <p><strong>Сайт:</strong> <a href="https://socialbearing.com" target="_blank">socialbearing.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">twitter</span>
+                    <span class="tag">analytics</span>
+                </div>
+            </div>
+
+            <div class="tool-card geo">
+                <div class="tool-header">
+                    <h3>Google Earth Pro</h3>
+                    <span class="tool-type">Геолокация</span>
+                </div>
+                <p><strong>Назначение:</strong> Спутниковые снимки и 3D карты</p>
+                <p><strong>Описание:</strong> Высокое разрешение спутниковых фотографий Земли</p>
+                <p><strong>Сайт:</strong> <a href="https://www.google.com/earth/download/" target="_blank">google.com/earth</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">satellite</span>
+                    <span class="tag">3d</span>
+                </div>
+            </div>
+
+            <div class="tool-card geo">
+                <div class="tool-header">
+                    <h3>MaxMind GeoIP2</h3>
+                    <span class="tool-type">IP Геолокация</span>
+                </div>
+                <p><strong>Назначение:</strong> Определение географии по IP адресу</p>
+                <p><strong>Описание:</strong> Точная база геолокации IP адресов</p>
+                <p><strong>Сайт:</strong> <a href="https://www.maxmind.com" target="_blank">maxmind.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно (lite) / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">ip</span>
+                    <span class="tag">geolocation</span>
+                </div>
+            </div>
+
+            <div class="tool-card image">
+                <div class="tool-header">
+                    <h3>TinEye</h3>
+                    <span class="tool-type">Поиск по изображениям</span>
+                </div>
+                <p><strong>Назначение:</strong> Обратный поиск изображений</p>
+                <p><strong>Описание:</strong> Нахождение оригинала и модификаций изображения</p>
+                <p><strong>Сайт:</strong> <a href="https://tineye.com" target="_blank">tineye.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">reverse-search</span>
+                    <span class="tag">images</span>
+                </div>
+            </div>
+
+            <div class="tool-card image">
+                <div class="tool-header">
+                    <h3>ExifTool</h3>
+                    <span class="tool-type">Анализ метаданных</span>
+                </div>
+                <p><strong>Назначение:</strong> Извлечение и удаление метаданных</p>
+                <p><strong>Описание:</strong> Работает с EXIF, IPTC, XMP и другими метаданными</p>
+                <p><strong>Сайт:</strong> <a href="https://exiftool.org" target="_blank">exiftool.org</a></p>
+                <p><strong>Цена:</strong> Бесплатно (Open Source)</p>
+                <div class="tool-tags">
+                    <span class="tag">metadata</span>
+                    <span class="tag">privacy</span>
+                </div>
+            </div>
+
+            <div class="tool-card security">
+                <div class="tool-header">
+                    <h3>Tor Browser</h3>
+                    <span class="tool-type">Безопасность</span>
+                </div>
+                <p><strong>Назначение:</strong> Анонимный интернет браузер</p>
+                <p><strong>Описание:</strong> Маршрутизирует трафик через несколько узлов</p>
+                <p><strong>Сайт:</strong> <a href="https://www.torproject.org" target="_blank">torproject.org</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">anonymity</span>
+                    <span class="tag">privacy</span>
+                </div>
+            </div>
+
+            <div class="tool-card security">
+                <div class="tool-header">
+                    <h3>ProtonVPN</h3>
+                    <span class="tool-type">VPN</span>
+                </div>
+                <p><strong>Назначение:</strong> Виртуальная приватная сеть</p>
+                <p><strong>Описание:</strong> Маскирует IP адрес и шифрует трафик</p>
+                <p><strong>Сайт:</strong> <a href="https://protonvpn.com" target="_blank">protonvpn.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">vpn</span>
+                    <span class="tag">privacy</span>
+                </div>
+            </div>
+
+            <div class="tool-card security">
+                <div class="tool-header">
+                    <h3>Signal</h3>
+                    <span class="tool-type">Мессенджер</span>
+                </div>
+                <p><strong>Назначение:</strong> Зашифрованное общение</p>
+                <p><strong>Описание:</strong> End-to-end шифрование для сообщений и звонков</p>
+                <p><strong>Сайт:</strong> <a href="https://signal.org" target="_blank">signal.org</a></p>
+                <p><strong>Цена:</strong> Бесплатно (Open Source)</p>
+                <div class="tool-tags">
+                    <span class="tag">encryption</span>
+                    <span class="tag">messaging</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>DuckDuckGo</h3>
+                    <span class="tool-type">Поисковый движок</span>
+                </div>
+                <p><strong>Назначение:</strong> Приватный поиск</p>
+                <p><strong>Описание:</strong> Поисковая система без отслеживания пользователей</p>
+                <p><strong>Сайт:</strong> <a href="https://duckduckgo.com" target="_blank">duckduckgo.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">search</span>
+                    <span class="tag">privacy</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Whois Lookup</h3>
+                    <span class="tool-type">Информация о доменах</span>
+                </div>
+                <p><strong>Назначение:</strong> Информация о регистраторе домена</p>
+                <p><strong>Описание:</strong> Контактные данные владельца домена</p>
+                <p><strong>Сайт:</strong> Множество онлайн инструментов</p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">domains</span>
+                    <span class="tag">whois</span>
+                </div>
+            </div>
+
+            <div class="tool-card osint">
+                <div class="tool-header">
+                    <h3>Maltego</h3>
+                    <span class="tool-type">Анализ данных</span>
+                </div>
+                <p><strong>Назначение:</strong> Визуальный анализ связей</p>
+                <p><strong>Описание:</strong> Создание карт связей между сущностями</p>
+                <p><strong>Сайт:</strong> <a href="https://www.maltego.com" target="_blank">maltego.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно (Community) / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">visualization</span>
+                    <span class="tag">analysis</span>
+                </div>
+            </div>
+
+            <div class="tool-card image">
+                <div class="tool-header">
+                    <h3>Yandex Image Search</h3>
+                    <span class="tool-type">Поиск изображений</span>
+                </div>
+                <p><strong>Назначение:</strong> Обратный поиск по изображениям</p>
+                <p><strong>Описание:</strong> Поиск оригинала и похожих изображений</p>
+                <p><strong>Сайт:</strong> <a href="https://yandex.com/images/" target="_blank">yandex.com/images</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">reverse-search</span>
+                    <span class="tag">images</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Archive.org (Wayback Machine)</h3>
+                    <span class="tool-type">Архив интернета</span>
+                </div>
+                <p><strong>Назначение:</strong> Исторические снимки веб-сайтов</p>
+                <p><strong>Описание:</strong> Просмотр старых версий веб-страниц</p>
+                <p><strong>Сайт:</strong> <a href="https://archive.org" target="_blank">archive.org</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">archive</span>
+                    <span class="tag">history</span>
+                </div>
+            </div>
+
+            <div class="tool-card osint">
+                <div class="tool-header">
+                    <h3>Hunter.io</h3>
+                    <span class="tool-type">Поиск email</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск email адресов</p>
+                <p><strong>Описание:</strong> Нахождение рабочих email по доменам и имкнам</p>
+                <p><strong>Сайт:</strong> <a href="https://hunter.io" target="_blank">hunter.io</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">email</span>
+                    <span class="tag">osint</span>
+                </div>
+            </div>
+            <div class="tool-card social">
+                <div class="tool-header">
+                    <h3>CheckUsernames</h3>
+                    <span class="tool-type">Поиск по никнеймам</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск никнейма по множеству сайтов</p>
+                <p><strong>Описание:</strong> Поиск по никнеймам, включает огромное количество сайтов</p>
+                <p><strong>Сайт:</strong> <a href="https://checkusernames.com/" target="_blank">checkusernames.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">username</span>
+                    <span class="tag">social</span>
+                </div>
+            </div>
+
+            <div class="tool-card social">
+                <div class="tool-header">
+                    <h3>Online VK</h3>
+                    <span class="tool-type">ВКонтакте анализ</span>
+                </div>
+                <p><strong>Назначение:</strong> Анализ профилей ВКонтакте</p>
+                <p><strong>Описание:</strong> Показывает скрытых друзей и друзей из закрытого профиля</p>
+                <p><strong>Сайт:</strong> <a href="https://online-vk.ru/" target="_blank">online-vk.ru</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">vk</span>
+                    <span class="tag">friends</span>
+                </div>
+            </div>
+
+            <div class="tool-card social">
+                <div class="tool-header">
+                    <h3>220VK</h3>
+                    <span class="tool-type">ВКонтакте инструмент</span>
+                </div>
+                <p><strong>Назначение:</strong> Анализ скрытых друзей</p>
+                <p><strong>Описание:</strong> Показывает скрытых друзей и другую информацию</p>
+                <p><strong>Сайт:</strong> <a href="https://220vk.com/" target="_blank">220vk.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">vk</span>
+                    <span class="tag">analysis</span>
+                </div>
+            </div>
+
+            <div class="tool-card image">
+                <div class="tool-header">
+                    <h3>FindClone</h3>
+                    <span class="tool-type">Поиск по внешности</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск аналогичных профилей по фото</p>
+                <p><strong>Описание:</strong> Определяет внешность человека и выдает похожие страницы ВКонтакте</p>
+                <p><strong>Сайт:</strong> <a href="https://findclone.ru/" target="_blank">findclone.ru</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">face-search</span>
+                    <span class="tag">vk</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>KeywordTool</h3>
+                    <span class="tool-type">Анализ ключевых слов</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск ключевых слов и фраз</p>
+                <p><strong>Описание:</strong> Показывает ключевые слова по запросу на любом языке для Google, YouTube, Twitter, Instagram, Amazon и др.</p>
+                <p><strong>Сайт:</strong> <a href="https://keywordtool.io/" target="_blank">keywordtool.io</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">keywords</span>
+                    <span class="tag">seo</span>
+                </div>
+            </div>
+
+            <div class="tool-card social">
+                <div class="tool-header">
+                    <h3>VK Tool42</h3>
+                    <span class="tool-type">ВКонтакте приложение</span>
+                </div>
+                <p><strong>Назначение:</strong> Сбор информации из ВКонтакте</p>
+                <p><strong>Описание:</strong> Приложение ВК для получения информации о профилях</p>
+                <p><strong>Сайт:</strong> <a href="https://vk.com/tool42" target="_blank">vk.com/tool42</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">vk</span>
+                    <span class="tag">app</span>
+                </div>
+            </div>
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>KODY.SU</h3>
+                    <span class="tool-type">Определение оператора</span>
+                </div>
+                <p><strong>Назначение:</strong> Определение мобильного оператора по номеру</p>
+                <p><strong>Описание:</strong> Определяет оператора и регион/страну по номеру телефона</p>
+                <p><strong>Сайт:</strong> <a href="https://www.kody.su/check-tel" target="_blank">kody.su</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">phone</span>
+                    <span class="tag">geo</span>
+                </div>
+            </div>
+
+            <div class="tool-card social">
+                <div class="tool-header">
+                    <h3>VK.Watch</h3>
+                    <span class="tool-type">История профилей ВК</span>
+                </div>
+                <p><strong>Назначение:</strong> История профилей ВКонтакте</p>
+                <p><strong>Описание:</strong> Просмотр истории изменений профилей (требуется подписка)</p>
+                <p><strong>Сайт:</strong> <a href="https://vk.watch/" target="_blank">vk.watch</a></p>
+                <p><strong>Цена:</strong> Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">vk</span>
+                    <span class="tag">history</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Lampyre Email & Phone Lookup</h3>
+                    <span class="tool-type">Поиск по контактам</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск по номеру телефона и аккаунтам</p>
+                <p><strong>Описание:</strong> Полезный инструмент для OSINT, поиск в телефонной книге</p>
+                <p><strong>Сайт:</strong> <a href="https://account.lampyre.io/email-and-phone-lookup" target="_blank">account.lampyre.io</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">phone</span>
+                    <span class="tag">email</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>GetContact</h3>
+                    <span class="tool-type">Поиск по номеру телефона</span>
+                </div>
+                <p><strong>Назначение:</strong> Информация о записи номера в контактах</p>
+                <p><strong>Описание:</strong> Найдет, как записан номер в разных контактах</p>
+                <p><strong>Сайт:</strong> <a href="https://getcontact.com" target="_blank">getcontact.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">phone</span>
+                    <span class="tag">contacts</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>TrueCaller</h3>
+                    <span class="tool-type">Телефонная книга</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск информации о номере</p>
+                <p><strong>Описание:</strong> Телефонная книга, найдет имя и оператора телефона</p>
+                <p><strong>Сайт:</strong> <a href="https://www.truecaller.com" target="_blank">truecaller.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">phone</span>
+                    <span class="tag">operator</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Mirror Bullshit Agency</h3>
+                    <span class="tool-type">Поиск объявлений</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск объявлений по номеру телефона</p>
+                <p><strong>Описание:</strong> Нахождение объявлений, связанных с номером телефона</p>
+                <p><strong>Сайт:</strong> <a href="https://mirror.bullshit.agency" target="_blank">mirror.bullshit.agency</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">phone</span>
+                    <span class="tag">ads</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Spravnik</h3>
+                    <span class="tool-type">Справочник номеров</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск по городским номерам телефонов</p>
+                <p><strong>Описание:</strong> Найдет ФИО и адрес по городскому номеру</p>
+                <p><strong>Сайт:</strong> <a href="https://spravnik.com" target="_blank">spravnik.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">phone</span>
+                    <span class="tag">directory</span>
+                </div>
+            </div>
+            <div class="tool-card osint">
+                <div class="tool-header">
+                    <h3>OSIntKit</h3>
+                    <span class="tool-type">OSINT Инструмент</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск информации о гражданах РФ</p>
+                <p><strong>Описание:</strong> Инструмент для OSINT разведки</p>
+                <p><strong>Сайт:</strong> <a href="http://osintkit.net" target="_blank">osintkit.net</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">osint</span>
+                    <span class="tag">russia</span>
+                </div>
+            </div>
+
+            <div class="tool-card osint">
+                <div class="tool-header">
+                    <h3>SpiderFoot</h3>
+                    <span class="tool-type">Автоматизация OSINT</span>
+                </div>
+                <p><strong>Назначение:</strong> Сбор информации о людях, доменах и IP</p>
+                <p><strong>Описание:</strong> Инструмент для автоматизированного сбора данных из открытых источников</p>
+                <p><strong>Сайт:</strong> <a href="https://www.spiderfoot.net/" target="_blank">spiderfoot.net</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">osint</span>
+                    <span class="tag">automation</span>
+                </div>
+            </div>
+
+            <div class="tool-card osint">
+                <div class="tool-header">
+                    <h3>Maltego</h3>
+                    <span class="tool-type">Визуализация связей</span>
+                </div>
+                <p><strong>Назначение:</strong> Визуализация связей между данными</p>
+                <p><strong>Описание:</strong> Создание карт связей между людьми, доменами, IP-адресами и соцсетями</p>
+                <p><strong>Сайт:</strong> <a href="https://www.maltego.com/" target="_blank">maltego.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно (Community) / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">visualization</span>
+                    <span class="tag">analysis</span>
+                </div>
+            </div>
+            <div class="tool-card image">
+                <div class="tool-header">
+                    <h3>FotoForensics</h3>
+                    <span class="tool-type">Анализ изображений</span>
+                </div>
+                <p><strong>Назначение:</strong> Выявление редактирования фотографий</p>
+                <p><strong>Описание:</strong> Сервис для анализа где и как редактировалась фотография</p>
+                <p><strong>Сайт:</strong> <a href="http://fotoforensics.com/" target="_blank">fotoforensics.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">forensics</span>
+                    <span class="tag">images</span>
+                </div>
+            </div>
+
+            <div class="tool-card image">
+                <div class="tool-header">
+                    <h3>Photo Forensics</h3>
+                    <span class="tool-type">Анализ метаданных фото</span>
+                </div>
+                <p><strong>Назначение:</strong> Анализ фотографий на предмет редактирования</p>
+                <p><strong>Описание:</strong> Детальный анализ пикселей и метаданных изображений</p>
+                <p><strong>Сайт:</strong> <a href="https://29a.ch/photo-forensics/" target="_blank">29a.ch</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">forensics</span>
+                    <span class="tag">metadata</span>
+                </div>
+            </div>
+
+            <div class="tool-card image">
+                <div class="tool-header">
+                    <h3>FindEXIF</h3>
+                    <span class="tool-type">Извлечение EXIF</span>
+                </div>
+                <p><strong>Назначение:</strong> Извлечение метаданных из изображений</p>
+                <p><strong>Описание:</strong> Получение EXIF данных, включая GPS координаты и дату съемки</p>
+                <p><strong>Сайт:</strong> <a href="http://www.findexif.com/" target="_blank">findexif.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">exif</span>
+                    <span class="tag">metadata</span>
+                </div>
+            </div>
+
+            <div class="tool-card image">
+                <div class="tool-header">
+                    <h3>EXIF Regex</h3>
+                    <span class="tool-type">Анализ EXIF данных</span>
+                </div>
+                <p><strong>Назначение:</strong> Детальный анализ EXIF информации</p>
+                <p><strong>Описание:</strong> Просмотр и анализ метаданных фотографий</p>
+                <p><strong>Сайт:</strong> <a href="http://exif.regex.info/exif.cgi" target="_blank">exif.regex.info</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">exif</span>
+                    <span class="tag">analysis</span>
+                </div>
+            </div>
+
+            <div class="tool-card image">
+                <div class="tool-header">
+                    <h3>MetaPicz</h3>
+                    <span class="tool-type">Просмотр метаданных</span>
+                </div>
+                <p><strong>Назначение:</strong> Извлечение метаданных из изображений</p>
+                <p><strong>Описание:</strong> Онлайн инструмент для просмотра EXIF, IPTC и других метаданных</p>
+                <p><strong>Сайт:</strong> <a href="http://metapicz.com/" target="_blank">metapicz.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">metadata</span>
+                    <span class="tag">exif</span>
+                </div>
+            </div>
+            <div class="tool-card image">
+                <div class="tool-header">
+                    <h3>SearchFace.ru</h3>
+                    <span class="tool-type">Поиск по лицу</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск в ВКонтакте по фотографии лица</p>
+                <p><strong>Описание:</strong> Использует распознавание лиц для поиска профилей ВК</p>
+                <p><strong>Сайт:</strong> <a href="http://searchface.ru/" target="_blank">searchface.ru</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">face-search</span>
+                    <span class="tag">vk</span>
+                </div>
+            </div>
+
+            <div class="tool-card image">
+                <div class="tool-header">
+                    <h3>PimEyes</h3>
+                    <span class="tool-type">Поиск по лицу в интернете</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск фотографий лица в интернете</p>
+                <p><strong>Описание:</strong> Обратный поиск лица, находит фотографии по всему веб</p>
+                <p><strong>Сайт:</strong> <a href="https://pimeyes.com/en/" target="_blank">pimeyes.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">face-search</span>
+                    <span class="tag">reverse-search</span>
+                </div>
+            </div>
+
+            <div class="tool-card image">
+                <div class="tool-header">
+                    <h3>BetaFace</h3>
+                    <span class="tool-type">Анализ лиц</span>
+                </div>
+                <p><strong>Назначение:</strong> Анализ лиц и сравнение фотографий</p>
+                <p><strong>Описание:</strong> Демо версия для анализа и сравнения лиц</p>
+                <p><strong>Сайт:</strong> <a href="http://betaface.com/demo_old.html" target="_blank">betaface.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">face-analysis</span>
+                    <span class="tag">comparison</span>
+                </div>
+            </div>
+
+            <div class="tool-card image">
+                <div class="tool-header">
+                    <h3>FindMeVK</h3>
+                    <span class="tool-type">Поиск профилей ВК</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск профилей ВКонтакте по фото</p>
+                <p><strong>Описание:</strong> Поиск аккаунтов ВК по фотографии лица</p>
+                <p><strong>Сайт:</strong> <a href="https://findmevk.com/" target="_blank">findmevk.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">vk</span>
+                    <span class="tag">face-search</span>
+                </div>
+            </div>
+
+            <div class="tool-card image">
+                <div class="tool-header">
+                    <h3>FaceSearch</h3>
+                    <span class="tool-type">Поиск по лицу</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск лиц в интернете</p>
+                <p><strong>Описание:</strong> Обратный поиск изображений лиц</p>
+                <p><strong>Сайт:</strong> <a href="http://www.facesaerch.com/" target="_blank">facesaerch.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">face-search</span>
+                    <span class="tag">reverse</span>
+                </div>
+            </div>
+
+            <div class="tool-card image">
+                <div class="tool-header">
+                    <h3>Berify</h3>
+                    <span class="tool-type">Обратный поиск изображений</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск первоисточника изображения</p>
+                <p><strong>Описание:</strong> Найдет оригинал и все домены где хостится картинка</p>
+                <p><strong>Сайт:</strong> <a href="https://berify.com/" target="_blank">berify.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">reverse-search</span>
+                    <span class="tag">images</span>
+                </div>
+            </div>
+
+            <div class="tool-card image">
+                <div class="tool-header">
+                    <h3>SearchByImages</h3>
+                    <span class="tool-type">Обратный поиск</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск источника и дубликатов изображения</p>
+                <p><strong>Описание:</strong> Обратный поиск картинок и всех их версий в интернете</p>
+                <p><strong>Сайт:</strong> <a href="https://searchbyimages.com/" target="_blank">searchbyimages.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">reverse-search</span>
+                    <span class="tag">images</span>
+                </div>
+            </div>
+
+            <div class="tool-card image">
+                <div class="tool-header">
+                    <h3>PrepPostSEO Reverse Image Search</h3>
+                    <span class="tool-type">Обратный поиск изображений</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск по изображениям</p>
+                <p><strong>Описание:</strong> Инструмент для обратного поиска картинок</p>
+                <p><strong>Сайт:</strong> <a href="https://www.prepostseo.com/reverse-image-search" target="_blank">prepostseo.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">reverse-search</span>
+                    <span class="tag">images</span>
+                </div>
+            </div>
+
+            <div class="tool-card image">
+                <div class="tool-header">
+                    <h3>SmallSEOTools Reverse Image Search</h3>
+                    <span class="tool-type">Поиск изображений</span>
+                </div>
+                <p><strong>Назначение:</strong> Обратный поиск картинок</p>
+                <p><strong>Описание:</strong> Поиск оригинала и похожих изображений в интернете</p>
+                <p><strong>Сайт:</strong> <a href="https://smallseotools.com/reverse-image-search/" target="_blank">smallseotools.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">reverse-search</span>
+                    <span class="tag">seo</span>
+                </div>
+            </div>
+
+            <div class="tool-card image">
+                <div class="tool-header">
+                    <h3>KarmaDécay</h3>
+                    <span class="tool-type">Поиск в Reddit</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск изображений в Reddit</p>
+                <p><strong>Описание:</strong> Поиск постов с изображением в истории Reddit</p>
+                <p><strong>Сайт:</strong> <a href="http://karmadecay.com/" target="_blank">karmadecay.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">reddit</span>
+                    <span class="tag">images</span>
+                </div>
+            </div>
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>PeekyYou</h3>
+                    <span class="tool-type">Поиск людей</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск информации о людях</p>
+                <p><strong>Описание:</strong> Поисковая система для поиска людей по имени</p>
+                <p><strong>Сайт:</strong> <a href="https://www.peekyou.com/" target="_blank">peekyou.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">people-search</span>
+                    <span class="tag">osint</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Pipl</h3>
+                    <span class="tool-type">Поиск людей</span>
+                </div>
+                <p><strong>Назначение:</strong> Глубокий поиск информации о человеке</p>
+                <p><strong>Описание:</strong> Поисковая система для поиска по имени, email, номеру телефона</p>
+                <p><strong>Сайт:</strong> <a href="https://pipl.com/" target="_blank">pipl.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">people-search</span>
+                    <span class="tag">osint</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>NamesLocator</h3>
+                    <span class="tool-type">Поиск по имени</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск людей по имени</p>
+                <p><strong>Описание:</strong> Поисковая система для поиска людей в интернете</p>
+                <p><strong>Сайт:</strong> <a href="http://www.nameslocator.com/" target="_blank">nameslocator.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">people-search</span>
+                    <span class="tag">names</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>ThatsThem</h3>
+                    <span class="tool-type">Поиск людей США</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск контактной информации в США</p>
+                <p><strong>Описание:</strong> База данных американских жителей и их контактов</p>
+                <p><strong>Сайт:</strong> <a href="https://thatsthem.com/" target="_blank">thatsthem.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">people-search</span>
+                    <span class="tag">usa</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>MarketVisual</h3>
+                    <span class="tool-type">Поиск демографических данных</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск информации о людях и их социальных сетях</p>
+                <p><strong>Описание:</strong> База данных с информацией о людях и их онлайн присутствии</p>
+                <p><strong>Сайт:</strong> <a href="http://www.marketvisual.com/" target="_blank">marketvisual.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">people-search</span>
+                    <span class="tag">social</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>BeenVerified</h3>
+                    <span class="tool-type">Верификация людей</span>
+                </div>
+                <p><strong>Назначение:</strong> Проверка информации о людях</p>
+                <p><strong>Описание:</strong> База данных для верификации контактов и информации</p>
+                <p><strong>Сайт:</strong> <a href="https://www.beenverified.com/" target="_blank">beenverified.com</a></p>
+                <p><strong>Цена:</strong> Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">verification</span>
+                    <span class="tag">people</span>
+                </div>
+            </div>
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Infobel</h3>
+                    <span class="tool-type">Европейский справочник</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск людей в Европе</p>
+                <p><strong>Описание:</strong> Международная база данных контактов в европейских странах</p>
+                <p><strong>Сайт:</strong> <a href="https://www.infobel.com" target="_blank">infobel.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">people-search</span>
+                    <span class="tag">europe</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Melissa Data</h3>
+                    <span class="tool-type">Проверка адресов</span>
+                </div>
+                <p><strong>Назначение:</strong> Верификация и валидация контактной информации</p>
+                <p><strong>Описание:</strong> Проверка адресов, телефонов, email и других данных</p>
+                <p><strong>Сайт:</strong> <a href="https://www.melissa.com/lookups/" target="_blank">melissa.com</a></p>
+                <p><strong>Цена:</strong> Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">verification</span>
+                    <span class="tag">addresses</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Spokeo</h3>
+                    <span class="tool-type">Поиск людей</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск информации о людях</p>
+                <p><strong>Описание:</strong> База данных контактной информации в США</p>
+                <p><strong>Сайт:</strong> <a href="https://www.spokeo.com/" target="_blank">spokeo.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">people-search</span>
+                    <span class="tag">usa</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>ZabaSearch</h3>
+                    <span class="tool-type">Поиск людей США</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск контактов в США</p>
+                <p><strong>Описание:</strong> Поиск адресов, телефонов и других контактов американских жителей</p>
+                <p><strong>Сайт:</strong> <a href="https://www.zabasearch.com/" target="_blank">zabasearch.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">people-search</span>
+                    <span class="tag">usa</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Canada411</h3>
+                    <span class="tool-type">Справочник Канады</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск контактов в Канаде</p>
+                <p><strong>Описание:</strong> База данных номеров телефонов и адресов Канады</p>
+                <p><strong>Сайт:</strong> <a href="http://www.canada411.ca/" target="_blank">canada411.ca</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">directory</span>
+                    <span class="tag">canada</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Snitch.Name</h3>
+                    <span class="tool-type">Поиск по имени</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск информации по имени</p>
+                <p><strong>Описание:</strong> Поиск людей и их информации по имени</p>
+                <p><strong>Сайт:</strong> <a href="http://snitch.name/" target="_blank">snitch.name</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">people-search</span>
+                    <span class="tag">names</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Yasni</h3>
+                    <span class="tool-type">Поиск людей</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск информации о людях</p>
+                <p><strong>Описание:</strong> Европейская поисковая система для поиска людей</p>
+                <p><strong>Сайт:</strong> <a href="http://www.yasni.co.uk/" target="_blank">yasni.co.uk</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">people-search</span>
+                    <span class="tag">europe</span>
+                </div>
+            </div>
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>DomainTools WHOIS</h3>
+                    <span class="tool-type">Информация о доменах</span>
+                </div>
+                <p><strong>Назначение:</strong> Подробная информация о доменах</p>
+                <p><strong>Описание:</strong> История регистрации, WHOIS данные, DNS информация</p>
+                <p><strong>Сайт:</strong> <a href="http://whois.domaintools.com/" target="_blank">domaintools.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">whois</span>
+                    <span class="tag">domains</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>ICANN WHOIS</h3>
+                    <span class="tool-type">Официальный WHOIS</span>
+                </div>
+                <p><strong>Назначение:</strong> Официальная информация о доменах</p>
+                <p><strong>Описание:</strong> WHOIS поиск от официального реестра доменов</p>
+                <p><strong>Сайт:</strong> <a href="https://whois.icann.org/en" target="_blank">whois.icann.org</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">whois</span>
+                    <span class="tag">official</span>
+                </div>
+            </div>
+
+            <div class="tool-card osint">
+                <div class="tool-header">
+                    <h3>Netcraft</h3>
+                    <span class="tool-type">Анализ веб-серверов</span>
+                </div>
+                <p><strong>Назначение:</strong> Информация о веб-сайтах и серверах</p>
+                <p><strong>Описание:</strong> Определение ОС, захват баннера, история веб-сайта</p>
+                <p><strong>Сайт:</strong> <a href="https://www.netcraft.com/" target="_blank">netcraft.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">server</span>
+                    <span class="tag">osint</span>
+                </div>
+            </div>
+
+            <div class="tool-card osint">
+                <div class="tool-header">
+                    <h3>HTTPRecon</h3>
+                    <span class="tool-type">Анализ веб-сервера</span>
+                </div>
+                <p><strong>Назначение:</strong> Определение ОС и ПО сервера</p>
+                <p><strong>Описание:</strong> Сбор информации о веб-сервере через HTTP запросы</p>
+                <p><strong>Сайт:</strong> <a href="https://w3dt.net/tools/httprecon" target="_blank">w3dt.net</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">server</span>
+                    <span class="tag">osint</span>
+                </div>
+            </div>
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>What Is My IP Address</h3>
+                    <span class="tool-type">Информация об IP</span>
+                </div>
+                <p><strong>Назначение:</strong> Определение своего IP адреса и его информации</p>
+                <p><strong>Описание:</strong> Определение IP, геолокации, провайдера и других данных</p>
+                <p><strong>Сайт:</strong> <a href="https://whatismyipaddress.com" target="_blank">whatismyipaddress.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">ip</span>
+                    <span class="tag">network</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>IP Address Location</h3>
+                    <span class="tool-type">Геолокация IP</span>
+                </div>
+                <p><strong>Назначение:</strong> Определение местоположения по IP адресу</p>
+                <p><strong>Описание:</strong> Карта с указанием геолокации и информацией о провайдере</p>
+                <p><strong>Сайт:</strong> <a href="http://www.ipaddresslocation.org/" target="_blank">ipaddresslocation.org</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">ip</span>
+                    <span class="tag">geo</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>F Vision</h3>
+                    <span class="tool-type">IP инструмент</span>
+                </div>
+                <p><strong>Назначение:</strong> Анализ IP адресов</p>
+                <p><strong>Описание:</strong> Определение географии и информации об IP</p>
+                <p><strong>Сайт:</strong> <a href="http://f.vision/" target="_blank">f.vision</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">ip</span>
+                    <span class="tag">geo</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Hashemian WhoAmI</h3>
+                    <span class="tool-type">Информация об IP</span>
+                </div>
+                <p><strong>Назначение:</strong> Определение IP адреса и информации о себе</p>
+                <p><strong>Описание:</strong> IP адрес, браузер, операционная система и другие данные</p>
+                <p><strong>Сайт:</strong> <a href="https://www.hashemian.com/whoami/" target="_blank">hashemian.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">ip</span>
+                    <span class="tag">browser</span>
+                </div>
+            </div>
+            <div class="tool-card security">
+                <div class="tool-header">
+                    <h3>Have I Been Pwned</h3>
+                    <span class="tool-type">Проверка утечек</span>
+                </div>
+                <p><strong>Назначение:</strong> Проверка наличия email в утечках</p>
+                <p><strong>Описание:</strong> Проверка email и пароля на наличие в известных утечках</p>
+                <p><strong>Сайт:</strong> <a href="https://haveibeenpwned.com" target="_blank">haveibeenpwned.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">breach</span>
+                    <span class="tag">security</span>
+                </div>
+            </div>
+
+            <div class="tool-card security">
+                <div class="tool-header">
+                    <h3>Hacked-Emails</h3>
+                    <span class="tool-type">Проверка email в утечках</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск email в базах утечек</p>
+                <p><strong>Описание:</strong> Проверка наличия email в архивах утечек</p>
+                <p><strong>Сайт:</strong> <a href="https://hacked-emails.com/" target="_blank">hacked-emails.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">breach</span>
+                    <span class="tag">email</span>
+                </div>
+            </div>
+
+            <div class="tool-card security">
+                <div class="tool-header">
+                    <h3>GhostProject</h3>
+                    <span class="tool-type">Поиск в утечках</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск информации в утечках данных</p>
+                <p><strong>Описание:</strong> Французская база с информацией об утечках</p>
+                <p><strong>Сайт:</strong> <a href="https://ghostproject.fr/" target="_blank">ghostproject.fr</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">breach</span>
+                    <span class="tag">database</span>
+                </div>
+            </div>
+
+            <div class="tool-card security">
+                <div class="tool-header">
+                    <h3>WeLeakInfo</h3>
+                    <span class="tool-type">Поиск в базах утечек</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск информации в утечках</p>
+                <p><strong>Описание:</strong> Поиск email, паролей и другой информации в утечках</p>
+                <p><strong>Сайт:</strong> <a href="https://weleakinfo.com/" target="_blank">weleakinfo.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">breach</span>
+                    <span class="tag">search</span>
+                </div>
+            </div>
+
+            <div class="tool-card security">
+                <div class="tool-header">
+                    <h3>LeakedSource.ru</h3>
+                    <span class="tool-type">Русские утечки</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск в русских базах утечек</p>
+                <p><strong>Описание:</strong> База утечек данных русскоязычных сервисов</p>
+                <p><strong>Сайт:</strong> <a href="https://leakedsource.ru/" target="_blank">leakedsource.ru</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">breach</span>
+                    <span class="tag">russia</span>
+                </div>
+            </div>
+
+            <div class="tool-card security">
+                <div class="tool-header">
+                    <h3>Offshore Leaks</h3>
+                    <span class="tool-type">Финансовые утечки</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск в базах офшорных компаний</p>
+                <p><strong>Описание:</strong> База ICIJ с информацией об офшорных компаниях и лицах</p>
+                <p><strong>Сайт:</strong> <a href="https://offshoreleaks.icij.org/" target="_blank">offshoreleaks.icij.org</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">financial</span>
+                    <span class="tag">offshore</span>
+                </div>
+            </div>
+            <div class="tool-card geo">
+                <div class="tool-header">
+                    <h3>Marine Traffic</h3>
+                    <span class="tool-type">Отслеживание судов</span>
+                </div>
+                <p><strong>Назначение:</strong> Мониторинг движения судов в реальном времени</p>
+                <p><strong>Описание:</strong> Карта с движением кораблей, информация о судах</p>
+                <p><strong>Сайт:</strong> <a href="https://www.marinetraffic.com" target="_blank">marinetraffic.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">ships</span>
+                    <span class="tag">tracking</span>
+                </div>
+            </div>
+
+            <div class="tool-card geo">
+                <div class="tool-header">
+                    <h3>SeaTracker</h3>
+                    <span class="tool-type">Отслеживание кораблей</span>
+                </div>
+                <p><strong>Назначение:</strong> Мониторинг судов в реальном времени</p>
+                <p><strong>Описание:</strong> Российский сервис отслеживания корабельного трафика</p>
+                <p><strong>Сайт:</strong> <a href="https://seatracker.ru/ais.php" target="_blank">seatracker.ru</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">ships</span>
+                    <span class="tag">russia</span>
+                </div>
+            </div>
+
+            <div class="tool-card geo">
+                <div class="tool-header">
+                    <h3>Plane Finder</h3>
+                    <span class="tool-type">Отслеживание самолетов</span>
+                </div>
+                <p><strong>Назначение:</strong> Мониторинг полетов в реальном времени</p>
+                <p><strong>Описание:</strong> Карта с информацией о самолетах, маршрутах и высоте</p>
+                <p><strong>Сайт:</strong> <a href="https://planefinder.net/" target="_blank">planefinder.net</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">aircraft</span>
+                    <span class="tag">tracking</span>
+                </div>
+            </div>
+
+            <div class="tool-card geo">
+                <div class="tool-header">
+                    <h3>RadarBox24</h3>
+                    <span class="tool-type">Отслеживание самолетов</span>
+                </div>
+                <p><strong>Назначение:</strong> Мониторинг авиадвижения</p>
+                <p><strong>Описание:</strong> Глобальная карта полетов с подробной информацией</p>
+                <p><strong>Сайт:</strong> <a href="https://www.radarbox24.com/" target="_blank">radarbox24.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">aircraft</span>
+                    <span class="tag">global</span>
+                </div>
+            </div>
+
+            <div class="tool-card geo">
+                <div class="tool-header">
+                    <h3>Flight Aware</h3>
+                    <span class="tool-type">Отслеживание рейсов</span>
+                </div>
+                <p><strong>Назначение:</strong> Отслеживание конкретных авиарейсов</p>
+                <p><strong>Описание:</strong> Информация о рейсах, статусе, задержках</p>
+                <p><strong>Сайт:</strong> <a href="https://de.flightaware.com/" target="_blank">flightaware.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">flights</span>
+                    <span class="tag">tracking</span>
+                </div>
+            </div>
+
+            <div class="tool-card geo">
+                <div class="tool-header">
+                    <h3>FlightRadar24</h3>
+                    <span class="tool-type">Отслеживание авиадвижения</span>
+                </div>
+                <p><strong>Назначение:</strong> Мониторинг полетов в реальном времени</p>
+                <p><strong>Описание:</strong> Интерактивная карта всех полетов над миром</p>
+                <p><strong>Сайт:</strong> <a href="https://www.flightradar24.com" target="_blank">flightradar24.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">flights</span>
+                    <span class="tag">tracking</span>
+                </div>
+            </div>
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>EGRUL.nalog.ru</h3>
+                    <span class="tool-type">Реестр компаний РФ</span>
+                </div>
+                <p><strong>Назначение:</strong> Информация о компаниях и ИП в России</p>
+                <p><strong>Описание:</strong> Единый государственный реестр юридических лиц и ИП</p>
+                <p><strong>Сайт:</strong> <a href="https://egrul.nalog.ru/" target="_blank">egrul.nalog.ru</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">companies</span>
+                    <span class="tag">russia</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>EDRPOU.ubki.ua</h3>
+                    <span class="tool-type">Реестр компаний Украины</span>
+                </div>
+                <p><strong>Назначение:</strong> Информация о юридических лицах Украины</p>
+                <p><strong>Описание:</strong> База юридических лиц и физических лиц-предпринимателей</p>
+                <p><strong>Сайт:</strong> <a href="https://edrpou.ubki.ua/ua" target="_blank">edrpou.ubki.ua</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">companies</span>
+                    <span class="tag">ukraine</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>BizInspect.by</h3>
+                    <span class="tool-type">Реестр Беларуси</span>
+                </div>
+                <p><strong>Назначение:</strong> Проверка контрагентов в Беларуси</p>
+                <p><strong>Описание:</strong> Реестр предприятий Беларуси с информацией о компаниях</p>
+                <p><strong>Сайт:</strong> <a href="https://bizinspect.by/" target="_blank">bizinspect.by</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">companies</span>
+                    <span class="tag">belarus</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>GRP Nalog.gov.by</h3>
+                    <span class="tool-type">Реестр налогоплательщиков</span>
+                </div>
+                <p><strong>Назначение:</strong> Государственный реестр налогоплательщиков Беларуси</p>
+                <p><strong>Описание:</strong> Официальная база налогоплательщиков Республики Беларусь</p>
+                <p><strong>Сайт:</strong> <a href="http://grp.nalog.gov.by/grp/" target="_blank">grp.nalog.gov.by</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">tax</span>
+                    <span class="tag">belarus</span>
+                </div>
+            </div>
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>BinDB</h3>
+                    <span class="tool-type">Поиск BIN карт</span>
+                </div>
+                <p><strong>Назначение:</strong> Информация о номерах карт (BIN)</p>
+                <p><strong>Описание:</strong> База данных с информацией об эмитентах банковских карт</p>
+                <p><strong>Сайт:</strong> <a href="https://www.bindb.com/" target="_blank">bindb.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">banking</span>
+                    <span class="tag">cards</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>BinBase</h3>
+                    <span class="tool-type">Поиск информации о картах</span>
+                </div>
+                <p><strong>Назначение:</strong> Определение информации по номеру карты</p>
+                <p><strong>Описание:</strong> База с информацией о банках и их картах</p>
+                <p><strong>Сайт:</strong> <a href="https://www.binbase.com/" target="_blank">binbase.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">banking</span>
+                    <span class="tag">bin</span>
+                </div>
+            </div>
+            <div class="tool-card osint">
+                <div class="tool-header">
+                    <h3>Onion Engine</h3>
+                    <span class="tool-type">Поисковик Tor</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск скрытых ресурсов в Tor сети</p>
+                <p><strong>Описание:</strong> Поисковая система для поиска .onion сайтов с приватностью</p>
+                <p><strong>Сайт:</strong> <a href="https://onionengine.com/" target="_blank">onionengine.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">tor</span>
+                    <span class="tag">darknet</span>
+                </div>
+            </div>
+            <div class="tool-card osint">
+                <div class="tool-header">
+                    <h3>OSINT Framework</h3>
+                    <span class="tool-type">Каталог OSINT инструментов</span>
+                </div>
+                <p><strong>Назначение:</strong> Централизованный каталог OSINT инструментов</p>
+                <p><strong>Описание:</strong> Огромная подборка OSINT инструментов, отсортированных по категориям</p>
+                <p><strong>Сайт:</strong> <a href="https://osintframework.com/" target="_blank">osintframework.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">osint</span>
+                    <span class="tag">framework</span>
+                </div>
+            </div>
+
+            <div class="tool-card osint">
+                <div class="tool-header">
+                    <h3>Intel Techniques Links</h3>
+                    <span class="tool-type">OSINT ресурсы</span>
+                </div>
+                <p><strong>Назначение:</strong> Подборка OSINT инструментов и техник</p>
+                <p><strong>Описание:</strong> Огромная коллекция ссылок на OSINT ресурсы от Intel Techniques</p>
+                <p><strong>Сайт:</strong> <a href="https://inteltechniques.com/links.HTML" target="_blank">inteltechniques.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">osint</span>
+                    <span class="tag">resources</span>
+                </div>
+            </div>
+
+            <div class="tool-card osint">
+                <div class="tool-header">
+                    <h3>OSINT Collection GitHub</h3>
+                    <span class="tool-type">GitHub подборка OSINT</span>
+                </div>
+                <p><strong>Назначение:</strong> Коллекция OSINT инструментов на GitHub</p>
+                <p><strong>Описание:</strong> Подборка open source OSINT инструментов и ресурсов</p>
+                <p><strong>Сайт:</strong> <a href="https://github.com/Ph055a/OSINT-Collection" target="_blank">github.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">osint</span>
+                    <span class="tag">github</span>
+                </div>
+            </div>
+
+            <div class="tool-card osint">
+                <div class="tool-header">
+                    <h3>CiberPatrulla Links</h3>
+                    <span class="tool-type">Каталог OSINT</span>
+                </div>
+                <p><strong>Назначение:</strong> Подборка OSINT ресурсов</p>
+                <p><strong>Описание:</strong> Испанский каталог с инструментами и ссылками OSINT</p>
+                <p><strong>Сайт:</strong> <a href="https://ciberpatrulla.com/links/" target="_blank">ciberpatrulla.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">osint</span>
+                    <span class="tag">catalog</span>
+                </div>
+            </div>
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Google Cache</h3>
+                    <span class="tool-type">Кеш Google</span>
+                </div>
+                <p><strong>Назначение:</strong> Просмотр кешированных версий сайтов</p>
+                <p><strong>Описание:</strong> Получение архивных версий страниц из кеша Google</p>
+                <p><strong>Сайт:</strong> <a href="https://www.google.com/search" target="_blank">google.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">cache</span>
+                    <span class="tag">archive</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Public Records Search Systems</h3>
+                    <span class="tool-type">Публичные реестры</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск в открытых судебных реестрах США</p>
+                <p><strong>Описание:</strong> Справочник судебных записей и публичных реестров</p>
+                <p><strong>Сайт:</strong> <a href="http://publicrecords.searchsystems.net/" target="_blank">publicrecords.searchsystems.net</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">records</span>
+                    <span class="tag">usa</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Федеральная служба судебных приставов РФ</h3>
+                    <span class="tool-type">Реестр судебных приставов</span>
+                </div>
+                <p><strong>Назначение:</strong> Информация о должниках и исполнительных производствах</p>
+                <p><strong>Описание:</strong> Официальный реестр долгов и судебных производств России</p>
+                <p><strong>Сайт:</strong> <a href="https://fssp.gov.ru/" target="_blank">fssp.gov.ru</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">legal</span>
+                    <span class="tag">russia</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Портал открытых данных России</h3>
+                    <span class="tool-type">Открытые данные РФ</span>
+                </div>
+                <p><strong>Назначение:</strong> Доступ к государственным данным России</p>
+                <p><strong>Описание:</strong> Портал с открытыми наборами данных государственных органов РФ</p>
+                <p><strong>Сайт:</strong> <a href="https://data.gov.ru/" target="_blank">data.gov.ru</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">open-data</span>
+                    <span class="tag">russia</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Портал открытых данных Украины</h3>
+                    <span class="tool-type">Открытые данные Украины</span>
+                </div>
+                <p><strong>Назначение:</strong> Доступ к государственным данным Украины</p>
+                <p><strong>Описание:</strong> Портал открытых данных украинских государственных учреждений</p>
+                <p><strong>Сайт:</strong> <a href="https://data.gov.ua/" target="_blank">data.gov.ua</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">open-data</span>
+                    <span class="tag">ukraine</span>
+                </div>
+            </div>
+
+            <div class="tool-card image">
+                <div class="tool-header">
+                    <h3>Toolsley</h3>
+                    <span class="tool-type">Анализ файлов</span>
+                </div>
+                <p><strong>Назначение:</strong> Анализ типов файлов</p>
+                <p><strong>Описание:</strong> Инструмент для определения типов файлов и их характеристик</p>
+                <p><strong>Сайт:</strong> <a href="https://www.toolsley.com/" target="_blank">toolsley.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">file-analysis</span>
+                    <span class="tag">forensics</span>
+                </div>
+            </div>
+
+            <div class="tool-card geo">
+                <div class="tool-header">
+                    <h3>Поиск публичных камер</h3>
+                    <span class="tool-type">Веб-камеры мира</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск открытых веб-камер</p>
+                <p><strong>Описание:</strong> Поиск и просмотр публичных камер видеонаблюдения со всего мира</p>
+                <p><strong>Сайт:</strong> Через Shodan и поиск IP камер</p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">cameras</span>
+                    <span class="tag">surveillance</span>
+                </div>
+            </div>
+
+            <div class="tool-card geo">
+                <div class="tool-header">
+                    <h3>Google Maps</h3>
+                    <span class="tool-type">Геолокационный поиск</span>
+                </div>
+                <p><strong>Назначение:</strong> Геолокационная поисковая система</p>
+                <p><strong>Описание:</strong> Использование Google Maps для поиска адресов, координат и географических данных</p>
+                <p><strong>Сайт:</strong> <a href="https://maps.google.com/" target="_blank">maps.google.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">geo</span>
+                    <span class="tag">maps</span>
+                </div>
+            </div>
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Scribd</h3>
+                    <span class="tool-type">Архив документов</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск и архив PDF документов</p>
+                <p><strong>Описание:</strong> Платформа с миллионами загруженных документов, включая PDF</p>
+                <p><strong>Сайт:</strong> <a href="https://www.scribd.com/" target="_blank">scribd.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">pdf</span>
+                    <span class="tag">documents</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>DocOH</h3>
+                    <span class="tool-type">Поиск в документах</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск и извлечение данных из PDF и таблиц</p>
+                <p><strong>Описание:</strong> Поиск информации в Excel файлах, PDF, на HTML страницах</p>
+                <p><strong>Сайт:</strong> Используйте операторы поиска Google: filetype:pdf, filetype:xlsx</p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">documents</span>
+                    <span class="tag">search</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Danwin1210 Leaks</h3>
+                    <span class="tool-type">Агрегатор утечек</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск в базах утечек</p>
+                <p><strong>Описание:</strong> Агрегатор с информацией об утечках и взломах</p>
+                <p><strong>Сайт:</strong> <a href="https://danwin1210.me/uploads/" target="_blank">danwin1210.me</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">breach</span>
+                    <span class="tag">database</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Siphon Leaks</h3>
+                    <span class="tool-type">Поиск в утечках</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск информации в базах утечек</p>
+                <p><strong>Описание:</strong> Агрегатор утечек и взломанных баз данных</p>
+                <p><strong>Сайт:</strong> <a href="http://siph0n.in/leaks.php" target="_blank">siph0n.in</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">breach</span>
+                    <span class="tag">search</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>NuclearLeaks</h3>
+                    <span class="tool-type">Поиск в утечках</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск в архивах утечек</p>
+                <p><strong>Описание:</strong> Поиск информации в огромной базе утечек</p>
+                <p><strong>Сайт:</strong> <a href="https://nuclearleaks.com/search/" target="_blank">nuclearleaks.com</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">breach</span>
+                    <span class="tag">database</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Vigilante</h3>
+                    <span class="tool-type">Агрегатор утечек</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск в базах утечек</p>
+                <p><strong>Описание:</strong> Платформа для поиска в различных утечках данных</p>
+                <p><strong>Сайт:</strong> <a href="http://vigilante.pw/" target="_blank">vigilante.pw</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">breach</span>
+                    <span class="tag">search</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Databases.today</h3>
+                    <span class="tool-type">Поиск в базах</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск информации в утечках баз данных</p>
+                <p><strong>Описание:</strong> Агрегатор с доступом к информации из взломанных баз</p>
+                <p><strong>Сайт:</strong> <a href="http://databases.today/" target="_blank">databases.today</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">database</span>
+                    <span class="tag">search</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>PublicDbHost</h3>
+                    <span class="tool-type">Поиск публичных баз</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск в открытых базах данных</p>
+                <p><strong>Описание:</strong> Поиск и индексация открытых баз данных</p>
+                <p><strong>Сайт:</strong> <a href="http://publicdbhost.dmca.gripe/" target="_blank">publicdbhost.dmca.gripe</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">database</span>
+                    <span class="tag">public</span>
+                </div>
+            </div>
+
+            <div class="tool-card geo">
+                <div class="tool-header">
+                    <h3>OpenWifi Database</h3>
+                    <span class="tool-type">Поиск точек Wi-Fi</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск открытых точек доступа</p>
+                <p><strong>Описание:</strong> Открытая база данных известных точек доступа Wi-Fi</p>
+                <p><strong>Сайт:</strong> Различные инструменты для сканирования Wi-Fi сетей</p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">network</span>
+                    <span class="tag">wifi</span>
+                </div>
+            </div>
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>IMEI Checker (World)</h3>
+                    <span class="tool-type">Проверка IMEI мира</span>
+                </div>
+                <p><strong>Назначение:</strong> Проверка кода IMEI мобильного телефона</p>
+                <p><strong>Описание:</strong> Определение производителя и информации о телефоне по IMEI</p>
+                <p><strong>Сайт:</strong> Различные онлайн сервисы для проверки IMEI</p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">mobile</span>
+                    <span class="tag">imei</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>IMEI Checker (RU)</h3>
+                    <span class="tool-type">Проверка IMEI Россия</span>
+                </div>
+                <p><strong>Назначение:</strong> Проверка IMEI для российских номеров</p>
+                <p><strong>Описание:</strong> Информация о мобильных устройствах по IMEI для России</p>
+                <p><strong>Сайт:</strong> Российские сервисы проверки</p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">mobile</span>
+                    <span class="tag">russia</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>IMEI Checker (UA)</h3>
+                    <span class="tool-type">Проверка IMEI Украина</span>
+                </div>
+                <p><strong>Назначение:</strong> Проверка IMEI для украинских номеров</p>
+                <p><strong>Описание:</strong> Информация о телефонах по IMEI для Украины</p>
+                <p><strong>Сайт:</strong> Украинские сервисы проверки</p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">mobile</span>
+                    <span class="tag">ukraine</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Справочник городских номеров телефонов СНГ</h3>
+                    <span class="tool-type">Справочник телефонов</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск по городским номерам СНГ</p>
+                <p><strong>Описание:</strong> Справочные сервисы городских номеров стран СНГ</p>
+                <p><strong>Сайт:</strong> Различные региональные справочники</p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">phone</span>
+                    <span class="tag">directory</span>
+                </div>
+            </div>
+
+            <div class="tool-card search">
+                <div class="tool-header">
+                    <h3>Cookie Checker</h3>
+                    <span class="tool-type">Анализ cookies</span>
+                </div>
+                <p><strong>Назначение:</strong> Проверка и анализ cookies</p>
+                <p><strong>Описание:</strong> Инструмент для анализа сохраненных cookies в браузере</p>
+                <p><strong>Сайт:</strong> Инструменты разработчика браузера</p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">cookies</span>
+                    <span class="tag">web</span>
+                </div>
+            </div>
+            <div class="tool-card osint">
+                <div class="tool-header">
+                    <h3>GitHub Search</h3>
+                    <span class="tool-type">Поиск исходного кода</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск исходного кода на GitHub</p>
+                <p><strong>Описание:</strong> Поиск открытого кода, утечек учетных данных в репозиториях</p>
+                <p><strong>Сайт:</strong> <a href="https://github.com/search" target="_blank">github.com/search</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">code</span>
+                    <span class="tag">osint</span>
+                </div>
+            </div>
+
+            <div class="tool-card osint">
+                <div class="tool-header">
+                    <h3>Shodan Similar Websites</h3>
+                    <span class="tool-type">Поиск похожих сайтов</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск семантически похожих сайтов</p>
+                <p><strong>Описание:</strong> Нахождение веб-сайтов с похожим функционалом и структурой</p>
+                <p><strong>Сайт:</strong> <a href="https://www.shodan.io/search" target="_blank">shodan.io</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">website</span>
+                    <span class="tag">search</span>
+                </div>
+            </div>
+
+            <div class="tool-card osint">
+                <div class="tool-header">
+                    <h3>NS Archive NSA USA</h3>
+                    <span class="tool-type">Архив документов</span>
+                </div>
+                <p><strong>Назначение:</strong> Архив рассекреченных документов США</p>
+                <p><strong>Описание:</strong> Архив национальной безопасности с рассекреченными документами</p>
+                <p><strong>Сайт:</strong> <a href="https://nsarchive2.gwu.edu//search.html" target="_blank">nsarchive2.gwu.edu</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">archive</span>
+                    <span class="tag">documents</span>
+                </div>
+            </div>
+
+            <div class="tool-card security">
+                <div class="tool-header">
+                    <h3>Spy-Soft ANB Documents</h3>
+                    <span class="tool-type">Документы АНБ</span>
+                </div>
+                <p><strong>Назначение:</strong> Информация о документах АНБ</p>
+                <p><strong>Описание:</strong> Подробное описание слитого следящего арсенала АНБ</p>
+                <p><strong>Сайт:</strong> <a href="http://www.spy-soft.net/dokumenty-anb/" target="_blank">spy-soft.net</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">documents</span>
+                    <span class="tag">security</span>
+                </div>
+            </div>
+
+            <div class="tool-card osint">
+                <div class="tool-header">
+                    <h3>OSINT Handbook PDF</h3>
+                    <span class="tool-type">Методология OSINT</span>
+                </div>
+                <p><strong>Назначение:</strong> Полное руководство по OSINT</p>
+                <p><strong>Описание:</strong> Коллекция инструментов и методик для OSINT разведки (2018)</p>
+                <p><strong>Сайт:</strong> <a href="https://www.i-intelligence.eu/wp-content/uploads/2018/06/OSINT_Handbook_June-2018_Final.pdf" target="_blank">i-intelligence.eu</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">osint</span>
+                    <span class="tag">handbook</span>
+                </div>
+            </div>
+            <div class="tool-card telegram-bot">
+               <div class="tool-header">
+                    <h3><a href="https://t.me/VkUrlBot" target="_blank">@VkUrlBot</a></h3>
+                    <span class="tool-type">ВКонтакте поиск</span>
+                </div>
+                <p><strong>Назначение:</strong> Дополнение к SearchFace.ru</p>
+                <p><strong>Описание:</strong> Боt для поиска профилей ВКонтакте через Telegram</p>
+                <p><strong>Использование:</strong> <a href="https://t.me/VkUrlBot" target="_blank">t.me/VkUrlBot</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">vk</span>
+                    <span class="tag">telegram-bot</span>
+                </div>
+            </div>
+            <div class="tool-card telegram-bot">
+                <div class="tool-header">
+                    <h3><a href="https://t.me/egrul_bot" target="_blank">@egrul_bot</a></h3>
+                    <span class="tool-type">Поиск компаний</span>
+                </div>
+                <p><strong>Назначение:</strong> Пробив компаний и ИП</p>
+                <p><strong>Описание:</strong> По ФИО/названию фирмы выдает ИНН, учредителей и налоговые декларации</p>
+                <p><strong>Использование:</strong> <a href="https://t.me/egrul_bot" target="_blank">t.me/egrul_bot</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">companies</span>
+                    <span class="tag">telegram-bot</span>
+                </div>
+            </div>
+            <div class="tool-card telegram-bot">
+                <div class="tool-header">
+                    <h3><a href="https://t.me/get_kontakt_bot" target="_blank">@get_kontakt_bot</a></h3>
+                    <span class="tool-type">Определение номера</span>
+                </div>
+                <p><strong>Назначение:</strong> Пробив номера мобильного телефона</p>
+                <p><strong>Описание:</strong> Как записан номер в разных телефонных книжках контактов</p>
+                <p><strong>Использование:</strong> <a href="https://t.me/get_kontakt_bot" target="_blank">t.me/get_kontakt_bot</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">phone</span>
+                    <span class="tag">telegram-bot</span>
+                </div>
+            </div>
+            <div class="tool-card telegram-bot">
+                <div class="tool-header">
+                    <h3><a href="https://t.me/mailsearchbot" target="_blank">@mailsearchbot</a></h3>
+                    <span class="tool-type">Поиск email</span>
+                </div>
+                <p><strong>Назначение:</strong> Пробив email адреса</p>
+                <p><strong>Описание:</strong> Выдает открытый пароль от почтовых ящиков, база очень крупная</p>
+                <p><strong>Использование:</strong> <a href="https://t.me/mailsearchbot" target="_blank">t.me/mailsearchbot</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">email</span>
+                    <span class="tag">telegram-bot</span>
+                </div>
+            </div>
+            <div class="tool-card telegram-bot">
+                <div class="tool-header">
+                    <h3><a href="https://t.me/getfb_bot" target="_blank">@getfb_bot</a></h3>
+                    <span class="tool-type">Поиск Facebook</span>
+                </div>
+                <p><strong>Назначение:</strong> По номеру телефона найти Facebook</p>
+                <p><strong>Описание:</strong> Выдает ссылку на личность в Facebook по номеру телефона</p>
+                <p><strong>Использование:</strong> <a href="https://t.me/getfb_bot" target="_blank">t.me/getfb_bot</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">facebook</span>
+                    <span class="tag">telegram-bot</span>
+                </div>
+            </div>
+            <div class="tool-card telegram-bot">
+                <div class="tool-header">
+                    <h3><a href="https://t.me/buzzim_alerts_bot" target="_blank">@buzzim_alerts_bot</a></h3>
+                    <span class="tool-type">Мониторинг Telegram</span>
+                </div>
+                <p><strong>Назначение:</strong> Поиск в Telegram и оповещения</p>
+                <p><strong>Описание:</strong> Ищет упоминания ников/каналов в чатах и статьях, функция оповещения</p>
+                <p><strong>Использование:</strong> <a href="https://t.me/buzzim_alerts_bot" target="_blank">t.me/buzzim_alerts_bot</a></p>
+                <p><strong>Цена:</strong> Бесплатно / Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">telegram</span>
+                    <span class="tag">telegram-bot</span>
+                </div>
+            </div>
+            <div class="tool-card telegram-bot">
+                <div class="tool-header">
+                    <h3><a href="https://t.me/AvinfoBot" target="_blank">@AvinfoBot</a></h3>
+                    <span class="tool-type">Поиск по номеру авто</span>
+                </div>
+                <p><strong>Назначение:</strong> По номеру телефона найти информацию об авто</p>
+                <p><strong>Описание:</strong> Выдает номер машины/марку и объявления на Avito.ru</p>
+                <p><strong>Использование:</strong> <a href="https://t.me/AvinfoBot" target="_blank">t.me/AvinfoBot</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">auto</span>
+                    <span class="tag">telegram-bot</span>
+                </div>
+            </div>
+            <div class="tool-card telegram-bot">
+                <div class="tool-header">
+                    <h3><a href="https://t.me/HowToFind_bot" target="_blank">@HowToFind_bot</a></h3>
+                    <span class="tool-type">OSINT советы</span>
+                </div>
+                <p><strong>Назначение:</strong> Бот разведчик с OSINT советами</p>
+                <p><strong>Описание:</strong> Подскажет секреты и приемы OSINT разведки</p>
+                <p><strong>Использование:</strong> <a href="https://t.me/HowToFind_bot" target="_blank">t.me/HowToFind_bot</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">osint</span>
+                    <span class="tag">telegram-bot</span>
+                </div>
+            </div>
+            <div class="tool-card telegram-bot">
+                <div class="tool-header">
+                    <h3><a href="https://t.me/am_i_secure_bot" target="_blank">@am_i_secure_bot</a></h3>
+                    <span class="tool-type">Проверка безопасности</span>
+                </div>
+                <p><strong>Назначение:</strong> Проверка пароля на утечку</p>
+                <p><strong>Описание:</strong> Проверит, есть ли ваш пароль в известных утечках</p>
+                <p><strong>Использование:</strong> <a href="https://t.me/am_i_secure_bot" target="_blank">t.me/am_i_secure_bot</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">security</span>
+                    <span class="tag">telegram-bot</span>
+                </div>
+            </div>
+            <div class="tool-card telegram-bot">
+                <div class="tool-header">
+                    <h3><a href="https://t.me/Darksalebot" target="_blank">@Darksalebot</a></h3>
+                    <span class="tool-type">Мониторинг темных рынков</span>
+                </div>
+                <p><strong>Назначение:</strong> Бот черного рынка</p>
+                <p><strong>Описание:</strong> Бот для работы с черными рынками</p>
+                <p><strong>Использование:</strong> <a href="https://t.me/Darksalebot" target="_blank">t.me/Darksalebot</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">darknet</span>
+                    <span class="tag">telegram-bot</span>
+                </div>
+            </div>
+
+            <div class="tool-card telegram-bot">
+                <div class="tool-header">
+                    <h3><a href="https://t.me/SafeSocks_Bot" target="_blank">@SafeSocks_Bot</a></h3>
+                    <span class="tool-type">Прокси и SOCKS</span>
+                </div>
+                <p><strong>Назначение:</strong> Бот черного рынка</p>
+                <p><strong>Описание:</strong> Бот для черных рынков и анонимности</p>
+                <p><strong>Использование:</strong> <a href="https://t.me/SafeSocks_Bot" target="_blank">t.me/SafeSocks_Bot</a></p>
+                <p><strong>Цена:</strong> Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">socks</span>
+                    <span class="tag">telegram-bot</span>
+                </div>
+            </div>
+
+            <div class="tool-card telegram-bot">
+                <div class="tool-header">
+                    <h3><a href="https://t.me/flood_sms_bot" target="_blank">@flood_sms_bot</a></h3>
+                    <span class="tool-type">SMS сервисы</span>
+                </div>
+                <p><strong>Назначение:</strong> Бот черного рынка</p>
+                <p><strong>Описание:</strong> Бот для SMS сервисов и массовой рассылки</p>
+                <p><strong>Использование:</strong> <a href="https://t.me/flood_sms_bot" target="_blank">t.me/flood_sms_bot</a></p>
+                <p><strong>Цена:</strong> Платно</p>
+                <div class="tool-tags">
+                    <span class="tag">sms</span>
+                    <span class="tag">telegram-bot</span>
+                </div>
+            </div>
+            <div class="tool-card telegram-bot">
+                <div class="tool-header">
+                    <h3><a href="https://t.me/mnp_bot" target="_blank">@mnp_bot</a></h3>
+                    <span class="tool-type">Определение оператора</span>
+                </div>
+                <p><strong>Назначение:</strong> Определение оператора и региона</p>
+                <p><strong>Описание:</strong> По номеру телефона определяет мобильного оператора и регион</p>
+                <p><strong>Использование:</strong> <a href="https://t.me/mnp_bot" target="_blank">t.me/mnp_bot</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">phone</span>
+                    <span class="tag">telegram-bot</span>
+                </div>
+            </div>
+
+            <div class="tool-card telegram-bot">
+                <div class="tool-header">
+                    <h3><a href="https://t.me/xinitbot" target="_blank">@xinitbot</a></h3>
+                    <span class="tool-type">Информация об операторе</span>
+                </div>
+                <p><strong>Назначение:</strong> Определение оператора</p>
+                <p><strong>Описание:</strong> Бот для определения мобильного оператора по номеру</p>
+                <p><strong>Использование:</strong> <a href="https://t.me/xinitbot" target="_blank">t.me/xinitbot</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">phone</span>
+                    <span class="tag">telegram-bot</span>
+                </div>
+            </div>
+
+            <div class="tool-card telegram-bot">
+                <div class="tool-header">
+                    <h3><a href="https://t.me/cesspoolNum_bot" target="_blank">@cesspoolNum_bot</a></h3>
+                    <span class="tool-type">Проверка номера</span>
+                </div>
+                <p><strong>Назначение:</strong> Определение оператора телефона</p>
+                <p><strong>Описание:</strong> Бот для проверки и определения информации о номере</p>
+                <p><strong>Использование:</strong> <a href="https://t.me/cesspoolNum_bot" target="_blank">t.me/cesspoolNum_bot</a></p>
+                <p><strong>Цена:</strong> Бесплатно</p>
+                <div class="tool-tags">
+                    <span class="tag">phone</span>
+                    <span class="tag">telegram-bot</span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="tools-table-section">
+        <div class="container">
+            <h2>Сравнительная таблица инструментов</h2>
+            <div class="table-responsive">
+                <table class="tools-table">
+                    <thead>
+                        <tr>
+                            <th>Инструмент</th>
+                            <th>Категория</th>
+                            <th>Цена</th>
+                            <th>Сложность</th>
+                            <th>Рейтинг</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Shodan</td>
+                            <td>Поиск</td>
+                            <td>Бесплатно / Платно</td>
+                            <td>Средняя</td>
+                            <td>★★★★★</td>
+                        </tr>
+                        <tr>
+                            <td>Maltego</td>
+                            <td>Анализ</td>
+                            <td>Бесплатно / Платно</td>
+                            <td>Высокая</td>
+                            <td>★★★★★</td>
+                        </tr>
+                        <tr>
+                            <td>Tor Browser</td>
+                            <td>Безопасность</td>
+                            <td>Бесплатно</td>
+                            <td>Низкая</td>
+                            <td>★★★★★</td>
+                        </tr>
+                        <tr>
+                            <td>TinEye</td>
+                            <td>Изображения</td>
+                            <td>Бесплатно</td>
+                            <td>Низкая</td>
+                            <td>★★★★</td>
+                        </tr>
+                        <tr>
+                            <td>Sherlock</td>
+                            <td>Социальные сети</td>
+                            <td>Бесплатно</td>
+                            <td>Средняя</td>
+                            <td>★★★★</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 NightArchive. Все права защищены.</p>
+            <p>Все инструменты должны использоваться в соответствии с местным законодательством.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('code').forEach(function(codeBlock) {
+                if (!codeBlock.closest('h1, h2, h3, h4, h5, h6, p, a')) {
+                    hljs.highlightElement(codeBlock);
+                    
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'code-block-wrapper';
+                    codeBlock.parentNode.insertBefore(wrapper, codeBlock);
+                    wrapper.appendChild(codeBlock);
+                    
+                    const copyBtn = document.createElement('button');
+                    copyBtn.className = 'code-copy-btn';
+                    copyBtn.innerHTML = '<i class="fas fa-copy"></i> Копировать';
+                    copyBtn.title = 'Копировать код в буфер обмена';
+                    
+                    copyBtn.addEventListener('click', function() {
+                        const text = codeBlock.innerText;
+                        navigator.clipboard.writeText(text).then(function() {
+                            const originalText = copyBtn.innerHTML;
+                            copyBtn.innerHTML = '<i class="fas fa-check"></i> Скопировано!';
+                            copyBtn.classList.add('copied');
+                            setTimeout(function() {
+                                copyBtn.innerHTML = originalText;
+                                copyBtn.classList.remove('copied');
+                            }, 2000);
+                        }).catch(function() {
+                            const textarea = document.createElement('textarea');
+                            textarea.value = text;
+                            document.body.appendChild(textarea);
+                            textarea.select();
+                            document.execCommand('copy');
+                            document.body.removeChild(textarea);
+                            
+                            const originalText = copyBtn.innerHTML;
+                            copyBtn.innerHTML = '<i class="fas fa-check"></i> Скопировано!';
+                            copyBtn.classList.add('copied');
+                            setTimeout(function() {
+                                copyBtn.innerHTML = originalText;
+                                copyBtn.classList.remove('copied');
+                            }, 2000);
+                        });
+                    });
+                    
+                    wrapper.appendChild(copyBtn);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

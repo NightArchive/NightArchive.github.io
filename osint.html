@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSINT Руководства - NightArchive</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">NightArchive</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="osint.html" class="active">OSINT</a></li>
+                <li><a href="deanon.html">Деанон</a></li>
+                <li><a href="tools.html">Инструменты</a></li>
+                <li><a href="resources.html">Ресурсы</a></li>
+                <li><a href="docs.html">Документация</a></li>
+                <li><a href="about.html">О сайте</a></li>
+            </ul>
+            <a href="https://t.me/NightArchiveTg" target="_blank" class="nav-telegram-btn">
+                <i class="fab fa-telegram-plane"></i>
+                <span>Telegram</span>
+            </a>
+        </div>
+    </nav>
+    <section class="page-header">
+        <h1>OSINT - Open Source Intelligence</h1>
+        <p>Полное руководство по сбору и анализу открытой информации</p>
+    </section>
+
+    <main class="container has-sidebar">
+        <aside class="sidebar">
+            <h3>Содержание</h3>
+            <ul class="toc">
+                <li><a href="#intro">Введение в OSINT</a></li>
+                <li><a href="#sources">Основные источники</a></li>
+                <li><a href="#techniques">Техники поиска</a></li>
+                <li><a href="#social">Социальные сети</a></li>
+                <li><a href="#web">Веб-поиск</a></li>
+                <li><a href="#geo">Геолокация</a></li>
+                <li><a href="#metadata">Метаданные</a></li>
+                <li><a href="#image">Поиск по изображениям</a></li>
+                <li><a href="#verification">Верификация</a></li>
+            </ul>
+        </aside>
+
+        <article class="main-content">
+            <section id="intro" class="section">
+                <h2>Введение в OSINT</h2>
+                <p><strong>OSINT (Open Source Intelligence)</strong> - это процесс сбора, анализа и интерпретации информации из открытых источников для решения конкретных задач разведки.</p>
+
+                <h3>Основные принципы:</h3>
+                <ul>
+                    <li><strong>Легальность:</strong> Используются только открытые, общедоступные источники</li>
+                    <li><strong>Методичность:</strong> Систематический подход к сбору информации</li>
+                    <li><strong>Верификация:</strong> Проверка и перепроверка всех данных</li>
+                    <li><strong>Анализ:</strong> Критическое мышление при интерпретации</li>
+                    <li><strong>Документирование:</strong> Ведение аккуратных записей источников</li>
+                </ul>
+
+                <h3>Применение OSINT:</h3>
+                <ul>
+                    <li>Журналистские расследования</li>
+                    <li>Кибербезопасность</li>
+                    <li>Корпоративная разведка</li>
+                    <li>Юридические расследования</li>
+                    <li>Исследование угроз</li>
+                    <li>Проверка фактов</li>
+                </ul>
+            </section>
+            <section id="sources" class="section">
+                <h2>Основные источники OSINT</h2>
+
+                <h3>1. Интернет</h3>
+                <ul>
+                    <li>Веб-сайты и блоги</li>
+                    <li>Форумы и доски обсуждений</li>
+                    <li>Новостные сайты</li>
+                    <li>Научные журналы</li>
+                    <li>Документы и отчеты</li>
+                </ul>
+
+                <h3>2. Социальные сети</h3>
+                <ul>
+                    <li>Facebook, Instagram, Twitter</li>
+                    <li>LinkedIn, VK, Telegram</li>
+                    <li>YouTube, TikTok</li>
+                    <li>Reddit, 4chan</li>
+                    <li>Специализированные форумы</li>
+                </ul>
+
+                <h3>3. Государственные источники</h3>
+                <ul>
+                    <li>Реестры компаний</li>
+                    <li>Кадастровые данные</li>
+                    <li>Судебные документы</li>
+                    <li>Правительственные отчеты</li>
+                    <li>Официальные объявления</li>
+                </ul>
+
+                <h3>4. Прочие источники</h3>
+                <ul>
+                    <li>Архивы (Archive.org)</li>
+                    <li>Поисковые системы</li>
+                    <li>Системы DNS и WHOIS</li>
+                    <li>Утечки данных (с соблюдением закона)</li>
+                    <li>Публичные API</li>
+                </ul>
+            </section>
+            <section id="techniques" class="section">
+                <h2>Основные техники поиска</h2>
+
+                <div class="technique-box">
+                    <h3>Google Dorking</h3>
+                    <p>Использование специальных операторов Google для точного поиска:</p>
+                    <code>
+site:example.com<br>
+filetype:pdf<br>
+intitle:"Admin"<br>
+inurl:admin<br>
+cache:example.com<br>
+"exact phrase"<br>
+-exclude<br>
+* wildcard
+                    </code>
+                </div>
+
+                <div class="technique-box">
+                    <h3>Boolean Search</h3>
+                    <p>Логические операторы для составления сложных запросов:</p>
+                    <code>
+(keyword1 OR keyword2) AND keyword3<br>
+keyword1 NOT keyword2<br>
+"phrase" NEAR keyword<br>
+keyword1 ADJACENT TO keyword2
+                    </code>
+                </div>
+
+                <div class="technique-box">
+                    <h3>Регулярные выражения (Regex)</h3>
+                    <p>Поиск по шаблонам в тексте:</p>
+                    <code>
+[0-9]{3}-[0-9]{2}-[0-9]{4} (для SSN)<br>
+[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,} (email)<br>
+\b(?:\d{1,3}\.){3}\d{1,3}\b (IP адрес)
+                    </code>
+                </div>
+            </section>
+            <section id="social" class="section">
+                <h2>Работа с социальными сетями</h2>
+
+                <h3>Стратегия анализа профилей:</h3>
+                <ol>
+                    <li>Идентификация учетной записи и базовой информации</li>
+                    <li>Анализ активности и графика постов</li>
+                    <li>Сбор контактов и связей</li>
+                    <li>Анализ интересов и предпочтений</li>
+                    <li>Поиск дополнительных профилей</li>
+                    <li>Сбор изображений и видео</li>
+                    <li>Проверка истории изменения профиля</li>
+                </ol>
+
+                <h3>Полезные ресурсы:</h3>
+                <ul>
+                    <li><strong>Social Bearing:</strong> Анализ Twitter профилей</li>
+                    <li><strong>Instatouch:</strong> Анализ Instagram</li>
+                    <li><strong>Sherlock:</strong> Поиск никнейма по разным площадкам</li>
+                    <li><strong>TweetDeck:</strong> Мониторинг Twitter в реальном времени</li>
+                </ul>
+            </section>
+            <section id="web" class="section">
+                <h2>Веб-поиск и архивы</h2>
+
+                <h3>Поисковые системы:</h3>
+                <ul>
+                    <li><strong>Google:</strong> Основной инструмент с продвинутыми операторами</li>
+                    <li><strong>DuckDuckGo:</strong> Приватный поиск</li>
+                    <li><strong>Bing:</strong> Альтернатива с своими особенностями</li>
+                    <li><strong>Yandex:</strong> Для русскоязычных источников</li>
+                    <li><strong>Shodan:</strong> Поиск интернет-подключенных устройств</li>
+                    <li><strong>Censys:</strong> Сертификаты, домены, хосты</li>
+                </ul>
+
+                <h3>Архивы интернета:</h3>
+                <ul>
+                    <li><strong>Archive.org Wayback Machine:</strong> Исторические снимки веб-сайтов</li>
+                    <li><strong>Cached versions:</strong> Кэшированные версии страниц</li>
+                    <li><strong>Library Genesis:</strong> Архив научных статей</li>
+                </ul>
+            </section>
+            <section id="geo" class="section">
+                <h2>Геолокация</h2>
+
+                <h3>Методы определения местоположения:</h3>
+                <ul>
+                    <li><strong>IP Geolocation:</strong> Определение страны, города, координат по IP</li>
+                    <li><strong>GPS данные:</strong> Поиск и анализ координат</li>
+                    <li><strong>Landmarks:</strong> Идентификация мест по архитектуре</li>
+                    <li><strong>Street View:</strong> Google Street View и аналоги</li>
+                    <li><strong>Спутниковые снимки:</strong> Google Earth, Sentinel</li>
+                    <li><strong>Карты:</strong> OpenStreetMap, Waze</li>
+                </ul>
+
+                <h3>Инструменты:</h3>
+                <ul>
+                    <li>MaxMind GeoIP</li>
+                    <li>IP2Location</li>
+                    <li>Google Earth Pro</li>
+                    <li>Leaflet (для создания карт)</li>
+                </ul>
+            </section>
+            <section id="metadata" class="section">
+                <h2>Анализ метаданных</h2>
+
+                <h3>Виды метаданных:</h3>
+                <ul>
+                    <li><strong>EXIF:</strong> Данные с фотоаппаратов (GPS, дата, время, модель)</li>
+                    <li><strong>PDF метаданные:</strong> Автор, дата создания, программа</li>
+                    <li><strong>HTTP заголовки:</strong> Информация о сервере</li>
+                    <li><strong>DNS записи:</strong> История и конфигурация домена</li>
+                    <li><strong>WHOIS:</strong> Информация о регистрации домена</li>
+                </ul>
+
+                <h3>Инструменты анализа:</h3>
+                <ul>
+                    <li>ExifTool</li>
+                    <li>Online EXIF viewer</li>
+                    <li>Strings утилита</li>
+                    <li>curl/wget для заголовков</li>
+                </ul>
+            </section>
+            <section id="image" class="section">
+                <h2>Поиск и анализ изображений</h2>
+
+                <h3>Методы поиска по изображениям:</h3>
+                <ol>
+                    <li>Загрузка изображения в поиск</li>
+                    <li>Обратный поиск по URL</li>
+                    <li>Анализ EXIF данных</li>
+                    <li>Поиск по сходству</li>
+                    <li>OCR для извлечения текста</li>
+                </ol>
+
+                <h3>Сервисы:</h3>
+                <ul>
+                    <li>Google Reverse Image Search</li>
+                    <li>Yandex Image Search</li>
+                    <li>TinEye</li>
+                    <li>Bing Visual Search</li>
+                </ul>
+
+                <h3>Анализ содержимого:</h3>
+                <ul>
+                    <li>Определение объектов (Computer Vision)</li>
+                    <li>Извлечение текста (OCR)</li>
+                    <li>Анализ лиц и распознавание</li>
+                    <li>Анализ цветов и текстур</li>
+                </ul>
+            </section>
+            <section id="verification" class="section">
+                <h2>Верификация информации</h2>
+
+                <h3>Процесс верификации:</h3>
+                <ol>
+                    <li>Проверьте источник - известный ли это источник</li>
+                    <li>Проверьте дату - когда была опубликована информация</li>
+                    <li>Перекрестная ссылка - найдите информацию в других источниках</li>
+                    <li>Проверьте контекст - полная ли это информация</li>
+                    <li>Проверьте автора - имеет ли он компетентность</li>
+                    <li>Ищите противоречия - есть ли конфликтующие данные</li>
+                </ol>
+
+                <h3>Инструменты проверки фактов:</h3>
+                <ul>
+                    <li>Snopes - проверка городских легенд</li>
+                    <li>FactCheck.org - проверка политических заявлений</li>
+                    <li>PolitiFact - анализ политических высказываний</li>
+                    <li>Google Scholar - научные публикации</li>
+                </ul>
+
+                <h3>Красные флаги:</h3>
+                <ul>
+                    <li>Отсутствие источников</li>
+                    <li>Эмоциональный язык</li>
+                    <li>Логические ошибки</li>
+                    <li>Слишком хорошо чтобы быть правдой</li>
+                    <li>Устаревшая информация без указания даты</li>
+                    <li>Подозрительный дизайн сайта</li>
+                </ul>
+            </section>
+            <section class="section">
+                <h2>Лучшие практики OSINT</h2>
+                <div class="best-practices">
+                    <div class="practice">
+                        <h4><i class="fas fa-check"></i> Документируйте все</h4>
+                        <p>Ведите записи всех найденных источников, сохраняйте скриншоты и архивируйте страницы</p>
+                    </div>
+                    <div class="practice">
+                        <h4><i class="fas fa-check"></i> Проверяйте несколько раз</h4>
+                        <p>Не полагайтесь на один источник, перепроверяйте информацию</p>
+                    </div>
+                    <div class="practice">
+                        <h4><i class="fas fa-check"></i> Оставайтесь объективными</h4>
+                        <p>Избегайте предубеждений и подтверждающих смещений</p>
+                    </div>
+                    <div class="practice">
+                        <h4><i class="fas fa-check"></i> Следуйте закону</h4>
+                        <p>Используйте только открытые источники и соблюдайте законодательство</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 NightArchive. Все права защищены.</p>
+            <p>Этот ресурс создан в образовательных целях.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('code').forEach(function(codeBlock) {
+                if (!codeBlock.closest('h1, h2, h3, h4, h5, h6, p, a')) {
+                    hljs.highlightElement(codeBlock);
+                    if (codeBlock.textContent.trim()) {
+                        const wrapper = document.createElement('div');
+                        wrapper.className = 'code-block-wrapper';
+                        codeBlock.parentNode.insertBefore(wrapper, codeBlock);
+                        wrapper.appendChild(codeBlock);
+                        const copyBtn = document.createElement('button');
+                        copyBtn.className = 'code-copy-btn';
+                        copyBtn.innerHTML = '<i class="fas fa-copy"></i> Копировать';
+                        copyBtn.addEventListener('click', function() {
+                            const text = codeBlock.innerText;
+                            navigator.clipboard.writeText(text).then(function() {
+                                copyBtn.innerHTML = '<i class="fas fa-check"></i> Скопировано!';
+                                copyBtn.classList.add('copied');
+                                setTimeout(function() {
+                                    copyBtn.innerHTML = '<i class="fas fa-copy"></i> Копировать';
+                                    copyBtn.classList.remove('copied');
+                                }, 2000);
+                            }).catch(function() {
+                                const textarea = document.createElement('textarea');
+                                textarea.value = text;
+                                document.body.appendChild(textarea);
+                                textarea.select();
+                                document.execCommand('copy');
+                                document.body.removeChild(textarea);
+                                copyBtn.innerHTML = '<i class="fas fa-check"></i> Скопировано!';
+                                copyBtn.classList.add('copied');
+                                setTimeout(function() {
+                                    copyBtn.innerHTML = '<i class="fas fa-copy"></i> Копировать';
+                                    copyBtn.classList.remove('copied');
+                                }, 2000);
+                            });
+                        });
+                        wrapper.appendChild(copyBtn);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
