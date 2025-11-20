@@ -239,4 +239,4 @@ nightarchive/
 
 **Используйте эту информацию ответственно и в соответствии с законодательством.** ⚖️
 
-*Last updated: 2025 | NightArchive © 2024*
+*Last updated: 2025 | NightArchive © 2025*
