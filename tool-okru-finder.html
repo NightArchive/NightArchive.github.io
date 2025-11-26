@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OKru Finder - Профессиональный инструмент для поиска и анализа профилей OK.ru по логину, номеру и email">
+    <meta name="keywords" content="OKru, поиск профилей, анализ, OSINT">
+    
+    <title>OKru Finder - NightArchive</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tool-page.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">NightArchive</a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="osint.html">OSINT</a></li>
+                <li><a href="deanon.html">Деанон</a></li>
+                <li><a href="tools.html">Инструменты</a></li>
+                <li><a href="archive.html">Архив</a></li>
+                <li><a href="resources.html">Ресурсы</a></li>
+                <li><a href="docs.html">Документация</a></li>
+                <li><a href="about.html">О сайте</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="https://t.me/NightArchiveTg" target="_blank" class="nav-telegram-btn">
+                    <i class="fab fa-telegram-plane"></i>
+                    <span>Telegram</span>
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="tool-hero">
+        <div class="tool-hero-background" style="background-image: url('images/OKru finder/Banner.png');">
+            <div class="tool-hero-overlay"></div>
+        </div>
+        <div class="tool-hero-content">
+
+            <h1>OKru Finder</h1>
+            <p class="tool-hero-subtitle">Профессиональный инструмент для поиска и анализа профилей OK.ru</p>
+            
+            <div class="tool-hero-rating">
+                <div class="rating-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half"></i>
+                </div>
+                <span class="rating-value">4.8 / 5.0</span>
+            </div>
+
+            <div class="tool-hero-actions">
+                <button class="btn btn-download" onclick="downloadTool('okru-finder')">
+                    <i class="fas fa-download"></i> Скачать (v1.0.0)
+                </button>
+                <button class="btn btn-secondary" onclick="document.getElementById('screenshots').scrollIntoView({behavior: 'smooth'})">
+                    <i class="fas fa-images"></i> Скриншоты
+                </button>
+            </div>
+
+            <div class="tool-hero-specs">
+                <div class="spec">
+                    <span class="spec-label">Версия</span>
+                    <span class="spec-value">1.0.0</span>
+                </div>
+                <div class="spec">
+                    <span class="spec-label">ОС</span>
+                    <span class="spec-value">Windows, Linux, macOS</span>
+                </div>
+                <div class="spec">
+                    <span class="spec-label">Размер</span>
+                    <span class="spec-value">183 кб</span>
+                </div>
+                <div class="spec">
+                    <span class="spec-label">Язык</span>
+                    <span class="spec-value python-icon">
+                        <i class="fab fa-python"></i>
+                        Python
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="tool-container">
+        <aside class="tool-sidebar">
+            <nav class="tool-nav">
+                <h3>На этой странице</h3>
+                <ul class="tool-nav-list">
+                    <li><a href="#overview">Обзор</a></li>
+                    <li><a href="#features">Возможности</a></li>
+                    <li><a href="#screenshots">Скриншоты</a></li>
+                    <li><a href="#specifications">Характеристики</a></li>
+                    <li><a href="#parameters">Параметры поиска</a></li>
+                    <li><a href="#output">Выходные данные</a></li>
+                    <li><a href="#recommendations">Рекомендации</a></li>
+                    <li><a href="#faq">Вопросы и ответы</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <article class="tool-main">
+            <section id="overview" class="tool-section">
+                <h2>Обзор</h2>
+                <p>
+                    <strong>OKru Finder</strong> — это мощный инструмент для комплексного поиска и анализа профилей социальной сети OK.ru. 
+                    Приложение позволяет быстро находить пользователей по различным критериям и получать детальную информацию о их профилях, 
+                    включая личные данные, контакты, местоположение и активность.
+                </p>
+                <p>
+                    Инструмент разработан для профессионалов в области OSINT, цифровых расследований и анализа информации. 
+                    Обеспечивает высокую точность результатов и удобный интерфейс для работы с большими объемами данных.
+                </p>
+                <p>
+                    <strong>✨ Полностью открытый исходный код (Open Source)</strong> — вы можете использовать, изучать и модифицировать программу в соответствии со своими нуждами.
+                </p>
+            </section>
+            <section id="features" class="tool-section">
+                <h2>Основные возможности</h2>
+                <div class="features-grid-large">
+                    <div class="feature-card-large">
+                        <div class="feature-icon"><i class="fas fa-search"></i></div>
+                        <h3>Поиск по логину</h3>
+                        <p>Быстрый поиск профилей по уникальным идентификаторам пользователей с высокой точностью</p>
+                    </div>
+                    <div class="feature-card-large">
+                        <div class="feature-icon"><i class="fas fa-phone"></i></div>
+                        <h3>Поиск по телефону</h3>
+                        <p>Идентификация профилей по номерам телефонов, привязанным к аккаунтам любого формата</p>
+                    </div>
+                    <div class="feature-card-large">
+                        <div class="feature-icon"><i class="fas fa-envelope"></i></div>
+                        <h3>Поиск по email</h3>
+                        <p>Поиск аккаунтов по электронным адресам с поддержкой всех популярных сервисов</p>
+                    </div>
+                    <div class="feature-card-large">
+                        <div class="feature-icon"><i class="fas fa-database"></i></div>
+                        <h3>Анализ данных</h3>
+                        <p>Детальный анализ информации профиля с выводом всех доступных данных в удобном виде</p>
+                    </div>
+                    <div class="feature-card-large">
+                        <div class="feature-icon"><i class="fas fa-table"></i></div>
+                        <h3>Экспорт результатов</h3>
+                        <p>Сохранение результатов в форматах CSV и JSON для дальнейшей обработки и анализа</p>
+                    </div>
+                    <div class="feature-card-large">
+                        <div class="feature-icon"><i class="fas fa-history"></i></div>
+                        <h3>История поисков</h3>
+                        <p>Полная история всех выполненных поисков с возможностью повтора и редактирования</p>
+                    </div>
+                </div>
+            </section>
+            <section id="screenshots" class="tool-section">
+                <h2>Скриншоты</h2>
+                <p class="section-description">Нажмите на скриншот для просмотра в полном размере</p>
+                <div class="screenshots-gallery">
+                    <div class="screenshot-item" onclick="openLightbox('images/OKru finder/search.png', 'Интерфейс поиска')">
+                        <img src="images/OKru finder/search.png" alt="Интерфейс поиска">
+                        <div class="screenshot-overlay">
+                            <div class="screenshot-overlay-content">
+                                <i class="fas fa-search-plus"></i>
+                                <p>Посмотреть в полном размере</p>
+                            </div>
+                        </div>
+                        <p class="screenshot-title">Интерфейс поиска с множественными параметрами</p>
+                    </div>
+
+                    <div class="screenshot-item" onclick="openLightbox('images/OKru finder/result.png', 'Результаты поиска')">
+                        <img src="images/OKru finder/result.png" alt="Результаты поиска">
+                        <div class="screenshot-overlay">
+                            <div class="screenshot-overlay-content">
+                                <i class="fas fa-search-plus"></i>
+                                <p>Посмотреть в полном размере</p>
+                            </div>
+                        </div>
+                        <p class="screenshot-title">Таблица результатов с подробной информацией</p>
+                    </div>
+
+                    <div class="screenshot-item" onclick="openLightbox('images/OKru finder/settings.png', 'Параметры')">
+                        <img src="images/OKru finder/settings.png" alt="Параметры">
+                        <div class="screenshot-overlay">
+                            <div class="screenshot-overlay-content">
+                                <i class="fas fa-search-plus"></i>
+                                <p>Посмотреть в полном размере</p>
+                            </div>
+                        </div>
+                        <p class="screenshot-title">Расширенные параметры и настройки</p>
+                    </div>
+
+                    <div class="screenshot-item" onclick="openLightbox('images/OKru finder/logs.png', 'История')">
+                        <img src="images/OKru finder/logs.png" alt="История">
+                        <div class="screenshot-overlay">
+                            <div class="screenshot-overlay-content">
+                                <i class="fas fa-search-plus"></i>
+                                <p>Посмотреть в полном размере</p>
+                            </div>
+                        </div>
+                        <p class="screenshot-title">История и логирование всех операций</p>
+                    </div>
+                </div>
+            </section>
+            <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+                <div class="lightbox-content" onclick="event.stopPropagation()">
+                    <button class="lightbox-close" onclick="closeLightbox()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="lightbox-image-container">
+                        <img id="lightboxImage" src="" alt="Screenshot">
+                    </div>
+                    <p id="lightboxCaption" class="lightbox-caption"></p>
+                </div>
+            </div>
+            <section id="specifications" class="tool-section">
+                <h2>Технические характеристики</h2>
+                <div class="specs-large-grid">
+                    <div class="spec-large-item">
+                        <label>Версия</label>
+                        <value>1.0.0</value>
+                    </div>
+                    <div class="spec-large-item">
+                        <label>Статус разработки</label>
+                        <value>Активно развивается</value>
+                    </div>
+                    <div class="spec-large-item">
+                        <label>Категория</label>
+                        <value>Поиск профилей</value>
+                    </div>
+                    <div class="spec-large-item">
+                        <label>Поддерживаемые ОС</label>
+                        <value>Windows 7+, Linux, macOS 10.12+</value>
+                    </div>
+                    <div class="spec-large-item">
+                        <label>Язык разработки</label>
+                        <value><i class="fab fa-python"></i> Python 3.8+</value>
+                    </div>
+                    <div class="spec-large-item">
+                        <label>Лицензия</label>
+                        <value>Open Source</value>
+                    </div>
+                    <div class="spec-large-item">
+                        <label>Размер архива</label>
+                        <value>183 кб</value>
+                    </div>
+
+                </div>
+            </section>
+            <section id="parameters" class="tool-section">
+                <h2>Параметры поиска</h2>
+                <p class="section-description">Поддерживаемые параметры и форматы ввода</p>
+                <div class="parameters-table">
+                    <div class="parameter-row">
+                        <div class="param-name">Логин</div>
+                        <div class="param-type">string</div>
+                        <div class="param-example">example_user, john_doe</div>
+                        <div class="param-required">Обязательный</div>
+                    </div>
+                    <div class="parameter-row">
+                        <div class="param-name">Номер</div>
+                        <div class="param-type">phone</div>
+                        <div class="param-example">79991234567, +79991234567</div>
+                        <div class="param-required">Обязательный</div>
+                    </div>
+                    <div class="parameter-row">
+                        <div class="param-name">Почта</div>
+                        <div class="param-type">email</div>
+                        <div class="param-example">user@mail.ru, example@gmail.com</div>
+                        <div class="param-required">Обязательный</div>
+                    </div>
+                </div>
+            </section>
+            <section id="output" class="tool-section">
+                <h2>Выходные данные</h2>
+                <p class="section-description">Информация, которую предоставляет инструмент о найденных профилях</p>
+                <div class="output-list-columns">
+                    <div class="output-column">
+                        <h3>Основная информация</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Запрос</li>
+                            <li><i class="fas fa-check"></i> Статус</li>
+                            <li><i class="fas fa-check"></i> Имя</li>
+                            <li><i class="fas fa-check"></i> Email</li>
+                            <li><i class="fas fa-check"></i> Телефон</li>
+                            <li><i class="fas fa-check"></i> Профиль</li>
+                            <li><i class="fas fa-check"></i> Дата регистрации</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="recommendations" class="tool-section">
+                <h2>Рекомендации по использованию</h2>
+                <div class="recommendations-grid">
+                    <div class="recommendation">
+                        <div class="rec-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3>Высокая точность</h3>
+                        <p>Используйте точные данные для поиска. Чем точнее параметры, тем точнее результаты. Проверьте правильность номеров телефонов и email адресов.</p>
+                    </div>
+                    <div class="recommendation">
+                        <div class="rec-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Безопасность и право</h3>
+                        <p>Используйте инструмент в соответствии с применимым законодательством вашей страны. Соблюдайте правила конфиденциальности и защиты данных.</p>
+                    </div>
+                    <div class="recommendation">
+                        <div class="rec-icon"><i class="fas fa-server"></i></div>
+                        <h3>Стабильность</h3>
+                        <p>Инструмент стабилен и протестирован. Рекомендуется периодически проверять обновления и устанавливать новые версии для лучшей производительности.</p>
+                    </div>
+                    <div class="recommendation">
+                        <div class="rec-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        <h3>Производительность</h3>
+                        <p>Для массовых поисков используйте экспорт данных и пакетную обработку. Это позволит обработать большие объемы информации эффективнее.</p>
+                    </div>
+                    <div class="recommendation">
+                        <div class="rec-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3>Сетевые соединения</h3>
+                        <p>Убедитесь, что у вас стабильное интернет соединение. Для лучшей производительности рекомендуется использовать проводное соединение.</p>
+                    </div>
+                    <div class="recommendation">
+                        <div class="rec-icon"><i class="fas fa-book"></i></div>
+                        <h3>Изучение документации</h3>
+                        <p>Прочитайте полную документацию перед началом работы. Она содержит примеры использования и ответы на часто задаваемые вопросы.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="faq" class="tool-section">
+                <h2>Часто задаваемые вопросы</h2>
+                <div class="faq-items">
+                    <div class="faq-item">
+                        <h3 class="faq-question">Почему инструмент не находит профиль?</h3>
+                        <p class="faq-answer">Профиль может быть удален, скрыт от поиска или данные указаны неправильно. Проверьте точность введенной информации. Попробуйте поиск по другим параметрам (телефон вместо логина или наоборот). Также возможно, что ваш IP адрес заблокирован сервером. В этом случае попробуйте добавить прокси в параметры поиска (Параметры > Прокси).</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">Какие форматы экспорта поддерживаются?</h3>
+                        <p class="faq-answer">Инструмент поддерживает два основных формата: CSV (для Excel, Google Sheets) и JSON (для программной обработки в Python, JavaScript и других языках).</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">Как установить инструмент?</h3>
+                        <p class="faq-answer">Скачайте архив и распакуйте его в любое удобное место. Затем установите все необходимые библиотеки из файла requirements.txt, запустив скрипт installer.py. После успешной установки запустите файл OKru Search.py.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">Есть ли версия для Linux и macOS?</h3>
+                        <p class="faq-answer">Да, инструмент полностью кроссплатформенный и работает на Windows, Linux (Ubuntu, Debian, CentOS) и macOS (10.12+).</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">Как обновить инструмент до новой версии?</h3>
+                        <p class="faq-answer">Скачайте новую версию и установите поверх старой. Все ваши настройки и история будут сохранены. Или используйте встроенную функцию автоматического обновления.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">Как сообщить об ошибке или проблеме?</h3>
+                        <p class="faq-answer">Нажмите кнопку "Сообщить об ошибке" в архиве или напишите в нашу Telegram группу: @NightArchiveTg. Приложите скриншот ошибки и описание проблемы.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">Есть ли бесплатная версия?</h3>
+                        <p class="faq-answer">Инструмент полностью бесплатный и с открытым исходным кодом. Вы можете использовать его без ограничений и модифицировать под свои нужды.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">Сколько запросов я могу выполнить в день?</h3>
+                        <p class="faq-answer">Нет официальных ограничений на количество запросов. Однако рекомендуется не более 100-200 запросов в час, чтобы избежать блокировки IP адреса.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="developers" class="tool-section">
+                <h2>О разработке</h2>
+                <p class="section-description">Инструмент разработан командой NightArchive</p>
+                <div class="developers-grid">
+                    <div class="developer-card">
+                        <div class="developer-avatar" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                        <h3>NightArchive Team</h3>
+                        <p class="developer-role">Разработка и поддержка</p>
+                        <p class="developer-bio">Профессиональная команда разработчиков, специализирующихся на OSINT инструментах и цифровых расследованиях.</p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                    <p>Этот проект является частью платформы <strong>NightArchive</strong> - открытого архива инструментов для цифровых расследований и анализа информации.</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Присоединяйтесь к сообществу: <a href="https://t.me/NightArchiveTg" target="_blank" style="color: #3b82f6; text-decoration: none;">Telegram</a></p>
+                </div>
+            </section>
+
+
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 NightArchive. Все права защищены.</p>
+            <p>Этот ресурс создан в образовательных целях. Используйте информацию ответственно и в соответствии с законодательством вашей страны.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/tool-page.js"></script>
+</body>
+</html>
