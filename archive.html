@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NightArchive Archive - Каталог профессиональных инструментов для OSINT и цифровых исследований">
+    <meta name="keywords" content="инструменты, OSINT, поиск профилей, OK.ru">
+    <meta name="author" content="NightArchive">
+    <meta name="theme-color" content="#0a0e27">
+    
+    <title>Archive - Каталог инструментов NightArchive</title>
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/archive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">NightArchive</a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="osint.html">OSINT</a></li>
+                <li><a href="deanon.html">Деанон</a></li>
+                <li><a href="tools.html">Инструменты</a></li>
+                <li><a href="archive.html" class="active">Архив</a></li>
+                <li><a href="resources.html">Ресурсы</a></li>
+                <li><a href="docs.html">Документация</a></li>
+                <li><a href="about.html">О сайте</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="https://t.me/NightArchiveTg" target="_blank" class="nav-telegram-btn">
+                    <i class="fab fa-telegram-plane"></i>
+                    <span>Telegram</span>
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="archive-hero">
+        <div class="archive-hero-content">
+            <h1>Архив инструментов</h1>
+            <p class="archive-hero-subtitle">Профессиональный каталог инструментов для OSINT и цифровых исследований</p>
+            <p class="archive-hero-description">Полнофункциональные приложения для поиска информации, анализа данных и проведения операций</p>
+        </div>
+    </section>
+
+    <main class="container archive-container">
+        <section class="archive-tools">
+            <div class="archive-filters">
+                <input type="text" id="archiveSearchInput" class="archive-search" placeholder="Поиск инструментов...">
+                <div class="filter-tags">
+                    <button class="filter-tag active" data-filter="all">Все</button>
+                    <button class="filter-tag" data-filter="search">Поиск</button>
+                    <button class="filter-tag" data-filter="analysis">Анализ</button>
+                    <button class="filter-tag" data-filter="social">Социальные сети</button>
+                </div>
+            </div>
+
+            <div class="archive-grid">
+                <!-- OKru Finder Card -->
+                <a href="tool-okru-finder.html" class="archive-card" data-filter="search social" data-tool="okru-finder">
+                    <div class="card-image-container">
+                        <img src="images/OKru finder/Banner.png" alt="OKru Finder" class="card-image">
+                        <div class="card-status">Активен</div>
+                        <div class="card-overlay">
+                            <div class="view-details-btn">
+                                <i class="fas fa-arrow-right"></i> Подробнее
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>OKru Finder</h3>
+                        <p class="card-category">Поиск профилей</p>
+                        <p class="card-description">Профессиональный инструмент для поиска и анализа профилей на социальной сети OK.ru</p>
+                        <div class="card-stats">
+                            <span><i class="fas fa-check-circle"></i> Полностью функционален</span>
+                            <span><i class="fas fa-star"></i> 4.8/5.0</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 NightArchive. Все права защищены.</p>
+            <p>Этот ресурс создан в образовательных целях. Используйте информацию ответственно и в соответствии с законодательством вашей страны.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/archive.js"></script>
+</body>
+</html>
